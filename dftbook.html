@@ -14371,7 +14371,452 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><img src="images/simple-cubic-cell.png" alt="一氧化碳分子"></p>
+<p><img src="images/simple-cubic-cell.png" alt="co_molecule" title="一氧化碳分子"></p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>简单立方晶胞有两个不方便的特点：</p>
+<ol>
+<li>由于CO分子在拐角处，其电子密度分布在盒子的8个角上，不便于后期可视化。</li>
+<li>由于立方体的几何形状，您需要相当大的立方体以确保分子的电子密度与其图像的电子密度不重叠。电子-电子相互作用是排斥的，重叠使能量显着增加。在这里，由于距离 10 Å 的周期性边界条件，CO 分子有 6 个图像。晶胞的体积是 1000 Å3.</li>
+</ol>
+<p>通过将原子集中在晶胞中，第一个问题很容易解决。第二个问题可以通过使用面心立方晶格来解决，它是最密堆积的晶格。</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">ase</span> <span class="kn">import</span> <span class="n">Atoms</span><span class="p">,</span> <span class="n">Atom</span>
+<span class="kn">from</span> <span class="nn">ase.io</span> <span class="kn">import</span> <span class="n">write</span>
+
+<span class="n">b</span> <span class="o">=</span> <span class="mf">7.1</span>
+<span class="n">atoms</span> <span class="o">=</span> <span class="n">Atoms</span><span class="p">([</span><span class="n">Atom</span><span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="p">[</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">]),</span>
+               <span class="n">Atom</span><span class="p">(</span><span class="s1">&#39;O&#39;</span><span class="p">,</span> <span class="p">[</span><span class="mf">1.1</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">])],</span>
+              <span class="n">cell</span><span class="o">=</span><span class="p">[[</span><span class="n">b</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="mf">0.</span><span class="p">],</span>
+                    <span class="p">[</span><span class="n">b</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="n">b</span><span class="p">],</span>
+                    <span class="p">[</span><span class="mf">0.</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">b</span><span class="p">]])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;V = </span><span class="si">{0:1.0f}</span><span class="s1"> Ang^3&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">atoms</span><span class="o">.</span><span class="n">get_volume</span><span class="p">()))</span>
+
+<span class="n">atoms</span><span class="o">.</span><span class="n">center</span><span class="p">()</span>  <span class="c1"># translate atoms to center of unit cell</span>
+<span class="n">write</span><span class="p">(</span><span class="s1">&#39;images/fcc-cell.png&#39;</span><span class="p">,</span> <span class="n">atoms</span><span class="p">,</span> <span class="n">show_unit_cell</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>V = 716 Ang^3
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><img src="images/fcc-cell.png" alt="co_in_fcc_cell" title="放置在fcc晶胞中心的一氧化碳分子"></p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h4 id="&#35835;&#21462;&#32467;&#26500;&#25991;&#20214;">&#35835;&#21462;&#32467;&#26500;&#25991;&#20214;<a class="anchor-link" href="#&#35835;&#21462;&#32467;&#26500;&#25991;&#20214;">&#182;</a></h4>
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><a href="https://wiki.fysik.dtu.dk/ase/ase/io/io.html#ase.io.read">ase.io.read</a>支持多种不同的文件格式：</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Known formats:</p>
+
+<pre><code>=========================  ===========
+format                     short name
+=========================  ===========
+GPAW restart-file          gpw
+Dacapo netCDF output file  dacapo
+Old ASE netCDF trajectory  nc
+Virtual Nano Lab file      vnl
+ASE pickle trajectory      traj
+ASE bundle trajectory      bundle
+GPAW text output           gpaw-text
+CUBE file                  cube
+XCrySDen Structure File    xsf
+Dacapo text output         dacapo-text
+XYZ-file                   xyz
+VASP POSCAR/CONTCAR file   vasp
+VASP OUTCAR file           vasp_out
+SIESTA STRUCT file         struct_out
+ABINIT input file          abinit
+V_Sim ascii file           v_sim
+Protein Data Bank          pdb
+CIF-file                   cif
+FHI-aims geometry file     aims
+FHI-aims output file       aims_out
+VTK XML Image Data         vti
+VTK XML Structured Grid    vts
+VTK XML Unstructured Grid  vtu
+TURBOMOLE coord file       tmol
+TURBOMOLE gradient file    tmol-gradient
+exciting input             exi
+AtomEye configuration      cfg
+WIEN2k structure file      struct
+DftbPlus input file        dftb
+CASTEP geom file           cell
+CASTEP output file         castep
+CASTEP trajectory file     geom
+ETSF format                etsf.nc
+DFTBPlus GEN format        gen
+CMR db/cmr-file            db
+CMR db/cmr-file            cmr
+LAMMPS dump file           lammps
+Gromacs coordinates        gro
+=========================  ===========</code></pre>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h4 id="&#39044;&#20808;&#23450;&#20041;&#30340;&#20998;&#23376;&#32467;&#26500;">&#39044;&#20808;&#23450;&#20041;&#30340;&#20998;&#23376;&#32467;&#26500;<a class="anchor-link" href="#&#39044;&#20808;&#23450;&#20041;&#30340;&#20998;&#23376;&#32467;&#26500;">&#182;</a></h4>
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><a href="https://wiki.fysik.dtu.dk/ase/index.html">ase</a> 在 <a href="https://wiki.fysik.dtu.dk/ase/ase/data.html#molecular-data">ase.data.molecules</a> 数据库中定义了许多分子几何结构 。例如，该数据库包括 G2/97 数据库curtiss:1063 中的分子。该数据库包含一组广泛的原子和分子，其中存在良好的实验数据，使它们可用于基准研究。</p>
+<p>数据库中原子的坐标是使用 MP2(full)/6-31G(d) 优化的几何结构。以下为 g2 数据库中所有的分子。</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[13]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">ase.data</span> <span class="kn">import</span> <span class="n">g2</span>
+<span class="n">keys</span> <span class="o">=</span> <span class="n">g2</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+<span class="c1"># print in 3 columns</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">keys</span><span class="p">)</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{0:25s}{1:25s}{2:25s}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">*</span><span class="nb">tuple</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">keys</span><span class="p">)[</span><span class="n">i</span> <span class="o">*</span> <span class="mi">3</span><span class="p">:</span> <span class="n">i</span> <span class="o">*</span> <span class="mi">3</span> <span class="o">+</span> <span class="mi">3</span><span class="p">])))</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>Be                       BeH                      C                        
+C2H2                     C2H4                     C2H6                     
+CH                       CH2_s1A1d                CH2_s3B1d                
+CH3                      CH3Cl                    CH3OH                    
+CH3SH                    CH4                      CN                       
+CO                       CO2                      CS                       
+Cl                       Cl2                      ClF                      
+ClO                      F                        F2                       
+H                        H2CO                     H2O                      
+H2O2                     HCN                      HCO                      
+HCl                      HF                       HOCl                     
+Li                       Li2                      LiF                      
+LiH                      N                        N2                       
+N2H4                     NH                       NH2                      
+NH3                      NO                       Na                       
+Na2                      NaCl                     O                        
+O2                       OH                       P                        
+P2                       PH2                      PH3                      
+S                        S2                       SH2                      
+SO                       SO2                      Si                       
+Si2                      Si2H6                    SiH2_s1A1d               
+SiH2_s3B1d               SiH3                     SiH4                     
+SiO                      2-butyne                 Al                       
+AlCl3                    AlF3                     B                        
+BCl3                     BF3                      C2Cl4                    
+C2F4                     C2H3                     C2H5                     
+C2H6CHOH                 C2H6NH                   C2H6SO                   
+C3H4_C2v                 C3H4_C3v                 C3H4_D2d                 
+C3H6_Cs                  C3H6_D3h                 C3H7                     
+C3H7Cl                   C3H8                     C3H9C                    
+C3H9N                    C4H4NH                   C4H4O                    
+C4H4S                    C5H5N                    C5H8                     
+C6H6                     CCH                      CCl4                     
+CF3CN                    CF4                      CH2NHCH2                 
+CH2OCH2                  CH2SCH2                  CH3CH2Cl                 
+CH3CH2NH2                CH3CH2O                  CH3CH2OCH3               
+CH3CH2OH                 CH3CH2SH                 CH3CHO                   
+CH3CN                    CH3CO                    CH3COCH3                 
+CH3COCl                  CH3COF                   CH3CONH2                 
+CH3COOH                  CH3NO2                   CH3O                     
+CH3OCH3                  CH3ONO                   CH3S                     
+CH3SCH3                  CH3SiH3                  COF2                     
+CS2                      ClF3                     ClNO                     
+F2O                      H2                       H2CCHCN                  
+H2CCHCl                  H2CCHF                   H2CCO                    
+H2CCl2                   H2CF2                    H2COH                    
+H3CNH2                   HCCl3                    HCF3                     
+HCOOCH3                  HCOOH                    N2O                      
+NCCN                     NF3                      NO2                      
+O3                       OCHCHO                   OCS                      
+PF3                      SH                       SiCl4                    
+SiF4                     bicyclobutane            butadiene                
+cyclobutane              cyclobutene              isobutane                
+isobutene                methylenecyclopropane    trans-butane             
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h4 id="&#32452;&#21512;-Atoms-&#23545;&#35937;">&#32452;&#21512; Atoms &#23545;&#35937;<a class="anchor-link" href="#&#32452;&#21512;-Atoms-&#23545;&#35937;">&#182;</a></h4>
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>组合两个Atoms对象通常很有用，例如用于计算反应障碍或其他类型的交互。在 ase 中，我们可以简单地将两个Atoms对象相加来实现分子合并。这是在同一晶胞中获取氨和氧分子的示例。我们Atoms使用ase.Atoms.translate函数使两个分子保持3 Å的距离。</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[15]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">ase.build</span> <span class="kn">import</span> <span class="n">molecule</span>
+<span class="kn">from</span> <span class="nn">ase.io</span> <span class="kn">import</span> <span class="n">write</span>
+
+<span class="n">atoms1</span> <span class="o">=</span> <span class="n">molecule</span><span class="p">(</span><span class="s1">&#39;NH3&#39;</span><span class="p">)</span>
+
+<span class="n">atoms2</span> <span class="o">=</span> <span class="n">molecule</span><span class="p">(</span><span class="s1">&#39;O2&#39;</span><span class="p">)</span>
+<span class="n">atoms2</span><span class="o">.</span><span class="n">translate</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+
+<span class="n">bothatoms</span> <span class="o">=</span> <span class="n">atoms1</span> <span class="o">+</span> <span class="n">atoms2</span>
+<span class="n">bothatoms</span><span class="o">.</span><span class="n">center</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="n">write</span><span class="p">(</span><span class="s1">&#39;images/bothatoms.png&#39;</span><span class="p">,</span> <span class="n">bothatoms</span><span class="p">,</span> <span class="n">show_unit_cell</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="s1">&#39;90x&#39;</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><img src="images/bothatoms.png" alt="bothatoms" title="组合两个分子"></p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="&#31616;&#21333;&#24615;&#36136;&#30340;&#35745;&#31639;">&#31616;&#21333;&#24615;&#36136;&#30340;&#35745;&#31639;<a class="anchor-link" href="#&#31616;&#21333;&#24615;&#36136;&#30340;&#35745;&#31639;">&#182;</a></h3>
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>简单性质不需要 DFT 计算。它们通常只是原子类型和几何形状的函数。</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h4 id="&#33719;&#21462;&#31515;&#21345;&#23572;&#22352;&#26631;">&#33719;&#21462;&#31515;&#21345;&#23572;&#22352;&#26631;<a class="anchor-link" href="#&#33719;&#21462;&#31515;&#21345;&#23572;&#22352;&#26631;">&#182;</a></h4>
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>如果你想要 ( x , y, z) 形式的原子坐标，使用ase.Atoms.get_positions。如果您对分数坐标感兴趣，请使用ase.Atoms.get_scaled_positions。</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[16]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">ase.build</span> <span class="kn">import</span> <span class="n">molecule</span>
+
+<span class="n">atoms</span> <span class="o">=</span> <span class="n">molecule</span><span class="p">(</span><span class="s1">&#39;C6H6&#39;</span><span class="p">)</span>  <span class="c1"># benzene</span>
+
+<span class="c1"># access properties on each atom</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39; #  sym   p_x     p_y     p_z&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;------------------------------&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">atom</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">atoms</span><span class="p">):</span>
+   <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{0:3d}{1:^4s}{2:-8.2f}{3:-8.2f}{4:-8.2f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">,</span>
+                                                           <span class="n">atom</span><span class="o">.</span><span class="n">symbol</span><span class="p">,</span>
+                                                           <span class="n">atom</span><span class="o">.</span><span class="n">x</span><span class="p">,</span>
+                                                           <span class="n">atom</span><span class="o">.</span><span class="n">y</span><span class="p">,</span>
+                                                           <span class="n">atom</span><span class="o">.</span><span class="n">z</span><span class="p">))</span>
+
+<span class="c1"># get all properties in arrays</span>
+<span class="n">sym</span> <span class="o">=</span> <span class="n">atoms</span><span class="o">.</span><span class="n">get_chemical_symbols</span><span class="p">()</span>
+<span class="n">pos</span> <span class="o">=</span> <span class="n">atoms</span><span class="o">.</span><span class="n">get_positions</span><span class="p">()</span>
+<span class="n">num</span> <span class="o">=</span> <span class="n">atoms</span><span class="o">.</span><span class="n">get_atomic_numbers</span><span class="p">()</span>
+
+<span class="n">atom_indices</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">atoms</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;  # sym    at#    p_x     p_y     p_z&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-------------------------------------&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">p</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">atom_indices</span><span class="p">,</span> <span class="n">sym</span><span class="p">,</span> <span class="n">num</span><span class="p">,</span> <span class="n">pos</span><span class="p">):</span>
+    <span class="n">px</span><span class="p">,</span> <span class="n">py</span><span class="p">,</span> <span class="n">pz</span> <span class="o">=</span> <span class="n">p</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{0:3d}{1:&gt;3s}{2:8d}{3:-8.2f}{4:-8.2f}{5:-8.2f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span>
+                                                                  <span class="n">px</span><span class="p">,</span> <span class="n">py</span><span class="p">,</span> <span class="n">pz</span><span class="p">))</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre> #  sym   p_x     p_y     p_z
+------------------------------
+  0 C      0.00    1.40    0.00
+  1 C      1.21    0.70    0.00
+  2 C      1.21   -0.70    0.00
+  3 C      0.00   -1.40    0.00
+  4 C     -1.21   -0.70    0.00
+  5 C     -1.21    0.70    0.00
+  6 H      0.00    2.48    0.00
+  7 H      2.15    1.24    0.00
+  8 H      2.15   -1.24    0.00
+  9 H      0.00   -2.48    0.00
+ 10 H     -2.15   -1.24    0.00
+ 11 H     -2.15    1.24    0.00
+
+  # sym    at#    p_x     p_y     p_z
+-------------------------------------
+  0  C       6    0.00    1.40    0.00
+  1  C       6    1.21    0.70    0.00
+  2  C       6    1.21   -0.70    0.00
+  3  C       6    0.00   -1.40    0.00
+  4  C       6   -1.21   -0.70    0.00
+  5  C       6   -1.21    0.70    0.00
+  6  H       1    0.00    2.48    0.00
+  7  H       1    2.15    1.24    0.00
+  8  H       1    2.15   -1.24    0.00
+  9  H       1    0.00   -2.48    0.00
+ 10  H       1   -2.15   -1.24    0.00
+ 11  H       1   -2.15    1.24    0.00
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h4 id="&#20998;&#23376;&#24335;&#21644;&#20998;&#23376;&#37327;">&#20998;&#23376;&#24335;&#21644;&#20998;&#23376;&#37327;<a class="anchor-link" href="#&#20998;&#23376;&#24335;&#21644;&#20998;&#23376;&#37327;">&#182;</a></h4>
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>我们可以使用此配方快速计算分子的分子量。我们使用ase.Atoms.get_masses获取Atoms对象中每个原子的原子质量数组，然后将它们相加。</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[18]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">ase.build</span> <span class="kn">import</span> <span class="n">molecule</span>
+
+<span class="n">atoms</span> <span class="o">=</span> <span class="n">molecule</span><span class="p">(</span><span class="s1">&#39;C6H6&#39;</span><span class="p">)</span>
+<span class="n">masses</span> <span class="o">=</span> <span class="n">atoms</span><span class="o">.</span><span class="n">get_masses</span><span class="p">()</span>
+
+<span class="n">molecular_weight</span> <span class="o">=</span> <span class="n">masses</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="n">molecular_formula</span> <span class="o">=</span> <span class="n">atoms</span><span class="o">.</span><span class="n">get_chemical_formula</span><span class="p">(</span><span class="n">mode</span><span class="o">=</span><span class="s1">&#39;reduce&#39;</span><span class="p">)</span>
+
+<span class="c1"># note use of two lines to keep length of line reasonable</span>
+<span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;The molecular weight of </span><span class="si">{0}</span><span class="s1"> is </span><span class="si">{1:1.2f}</span><span class="s1"> gm/mol&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">molecular_formula</span><span class="p">,</span> <span class="n">molecular_weight</span><span class="p">))</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>The molecular weight of C6H6 is 78.11 gm/mol
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>注意 ase.Atoms.get_chemical_formula 的参数 <code>reduce=True</code> 收集所有的符号提供了分子式。</p>
 
 </div>
 </div>
