@@ -1,0 +1,1851 @@
+
+     Program PWSCF v.6.8 starts on 16Nov2021 at 12: 1:21 
+
+     This program is part of the open-source Quantum ESPRESSO suite
+     for quantum simulation of materials; please cite
+         "P. Giannozzi et al., J. Phys.:Condens. Matter 21 395502 (2009);
+         "P. Giannozzi et al., J. Phys.:Condens. Matter 29 465901 (2017);
+         "P. Giannozzi et al., J. Chem. Phys. 152 154105 (2020);
+          URL http://www.quantum-espresso.org", 
+     in publications or presentations arising from this work. More details at
+     http://www.quantum-espresso.org/quote
+
+     Parallel version (MPI & OpenMP), running on       4 processor cores
+     Number of MPI processes:                 2
+     Threads/MPI process:                     2
+
+     MPI processes distributed on     1 nodes
+     R & G space division:  proc/nbgrp/npool/nimage =       2
+     6261 MiB available memory on the printing compute node when the environment starts
+ 
+     Reading input from water.pwi
+Warning: card &CELL ignored
+Warning: card / ignored
+
+     Current dimensions of program PWSCF are:
+     Max number of different atomic species (ntypx) = 10
+     Max number of k-points (npk) =  40000
+     Max angular momentum in pseudopotentials (lmaxx) =  4
+     file O.pbe-n-kjpaw_psl.1.0.0.UPF: wavefunction(s)  2S 2P renormalized
+     file H.pbe-kjpaw_psl.1.0.0.UPF: wavefunction(s)  1S renormalized
+
+     gamma-point specific algorithms are used
+     Message from routine setup:
+     using ibrav=0 with symmetry is DISCOURAGED, use correct ibrav instead
+
+     Subspace diagonalization in iterative solution of the eigenvalue problem:
+     a serial algorithm will be used
+
+ 
+     Parallelization info
+     --------------------
+     sticks:   dense  smooth     PW     G-vecs:    dense   smooth      PW
+     Min        2071    1197    299                98525    43259    5408
+     Max        2074    1200    300                98526    43260    5409
+     Sum        4145    2397    599               197051    86519   10817
+ 
+     Using Slab Decomposition
+ 
+
+
+     bravais-lattice index     =            0
+     lattice parameter (alat)  =      11.3384  a.u.
+     unit-cell volume          =    2010.2063 (a.u.)^3
+     number of atoms/cell      =            3
+     number of atomic types    =            2
+     number of electrons       =         8.00
+     number of Kohn-Sham states=            4
+     kinetic-energy cutoff     =      46.6495  Ry
+     charge density cutoff     =     323.0247  Ry
+     scf convergence threshold =      1.0E-06
+     mixing beta               =       0.7000
+     number of iterations used =            8  plain     mixing
+     energy convergence thresh.=      1.0E-04
+     force convergence thresh. =      1.0E-04
+     Exchange-correlation= SLA  PW   PBX  PBC
+                           (   1   4   3   4   0   0   0)
+     nstep                     =           50
+
+
+     GPU acceleration is ACTIVE.
+
+
+     GPU used by master process:
+
+        Device Number: 0
+        Device name: Tesla K80
+        Compute capability : 37
+        Ratio of single to double precision performance  : 3
+        Memory Clock Rate (KHz): 2505000
+        Memory Bus Width (bits): 384
+        Peak Memory Bandwidth (GB/s): 240.48
+
+     celldm(1)=  11.338357  celldm(2)=   0.000000  celldm(3)=   0.000000
+     celldm(4)=   0.000000  celldm(5)=   0.000000  celldm(6)=   0.000000
+
+     crystal axes: (cart. coord. in units of alat)
+               a(1) = (   1.000000   0.000000   0.000000 )  
+               a(2) = (   0.000000   1.254413   0.000000 )  
+               a(3) = (   0.000000   0.000000   1.099385 )  
+
+     reciprocal axes: (cart. coord. in units 2 pi/alat)
+               b(1) = (  1.000000  0.000000  0.000000 )  
+               b(2) = (  0.000000  0.797186  0.000000 )  
+               b(3) = (  0.000000  0.000000  0.909600 )  
+
+
+     PseudoPot. # 1 for O  read from file:
+     /home/liutong/pseudo/O.pbe-n-kjpaw_psl.1.0.0.UPF
+     MD5 check sum: 25c0f47998bc3d10d7b3cc28f54c7589
+     Pseudo is Projector augmented-wave + core cor, Zval =  6.0
+     Generated using 'atomic' code by A. Dal Corso  v.6.7MaX
+     Shape of augmentation charge: PSQ
+     Using radial grid of 1095 points,  4 beta functions with: 
+                l(1) =   0
+                l(2) =   0
+                l(3) =   1
+                l(4) =   1
+     Q(r) pseudized with 0 coefficients 
+
+
+     PseudoPot. # 2 for H  read from file:
+     /home/liutong/pseudo/H.pbe-kjpaw_psl.1.0.0.UPF
+     MD5 check sum: dc66a946dd00368bdd13e15c7acdf509
+     Pseudo is Projector augmented-wave, Zval =  1.0
+     Generated using 'atomic' code by A. Dal Corso  v.6.7MaX
+     Shape of augmentation charge: PSQ
+     Using radial grid of  929 points,  2 beta functions with: 
+                l(1) =   0
+                l(2) =   0
+     Q(r) pseudized with 0 coefficients 
+
+
+     atomic species   valence    mass     pseudopotential
+        O              6.00    15.99900     O ( 1.00)
+        H              1.00     1.00800     H ( 1.00)
+
+      4 Sym. Ops. (no inversion) found
+
+
+                                    s                        frac. trans.
+
+      isym =  1     identity                                     
+
+ cryst.   s( 1) = (     1          0          0      )
+                  (     0          1          0      )
+                  (     0          0          1      )
+
+ cart.    s( 1) = (  1.0000000  0.0000000  0.0000000 )
+                  (  0.0000000  1.0000000  0.0000000 )
+                  (  0.0000000  0.0000000  1.0000000 )
+
+
+      isym =  2     180 deg rotation - cart. axis [0,0,1]        
+
+ cryst.   s( 2) = (    -1          0          0      )
+                  (     0         -1          0      )
+                  (     0          0          1      )
+
+ cart.    s( 2) = ( -1.0000000  0.0000000  0.0000000 )
+                  (  0.0000000 -1.0000000  0.0000000 )
+                  (  0.0000000  0.0000000  1.0000000 )
+
+
+      isym =  3     inv. 180 deg rotation - cart. axis [0,1,0]   
+
+ cryst.   s( 3) = (     1          0          0      )
+                  (     0         -1          0      )
+                  (     0          0          1      )
+
+ cart.    s( 3) = (  1.0000000  0.0000000  0.0000000 )
+                  (  0.0000000 -1.0000000  0.0000000 )
+                  (  0.0000000  0.0000000  1.0000000 )
+
+
+      isym =  4     inv. 180 deg rotation - cart. axis [1,0,0]   
+
+ cryst.   s( 4) = (    -1          0          0      )
+                  (     0          1          0      )
+                  (     0          0          1      )
+
+ cart.    s( 4) = ( -1.0000000  0.0000000  0.0000000 )
+                  (  0.0000000  1.0000000  0.0000000 )
+                  (  0.0000000  0.0000000  1.0000000 )
+
+
+   Cartesian axes
+
+     site n.     atom                  positions (alat units)
+         1           O   tau(   1) = (   0.5000000   0.6272065   0.5993848  )
+         2           H   tau(   2) = (   0.5000000   0.7544130   0.5000000  )
+         3           H   tau(   3) = (   0.5000000   0.5000000   0.5000000  )
+
+   Crystallographic axes
+
+     site n.     atom                  positions (cryst. coord.)
+         1           O   tau(   1) = (  0.5000000  0.5000000  0.5452002  )
+         2           H   tau(   2) = (  0.5000000  0.6014072  0.4547998  )
+         3           H   tau(   3) = (  0.5000000  0.3985928  0.4547998  )
+
+     number of k points=     1
+                       cart. coord. in units 2pi/alat
+        k(    1) = (   0.0000000   0.0000000   0.0000000), wk =   2.0000000
+
+                       cryst. coord.
+        k(    1) = (   0.0000000   0.0000000   0.0000000), wk =   2.0000000
+
+     Dense  grid:    98526 G-vectors     FFT dimensions: (  72,  81,  72)
+
+     Smooth grid:    43260 G-vectors     FFT dimensions: (  50,  64,  60)
+
+     Dynamical RAM for                 wfc:       0.17 MB
+
+     Dynamical RAM for     wfc (w. buffer):       0.17 MB
+
+     Dynamical RAM for           str. fact:       1.50 MB
+
+     Dynamical RAM for           local pot:       0.00 MB
+
+     Dynamical RAM for          nlocal pot:       0.50 MB
+
+     Dynamical RAM for                qrad:       0.82 MB
+
+     Dynamical RAM for          rho,v,vnew:       7.06 MB
+
+     Dynamical RAM for               rhoin:       2.35 MB
+
+     Dynamical RAM for            rho*nmix:      12.03 MB
+
+     Dynamical RAM for           G-vectors:       2.98 MB
+
+     Dynamical RAM for          h,s,v(r/c):       0.00 MB
+
+     Dynamical RAM for          <psi|beta>:       0.00 MB
+
+     Dynamical RAM for                 psi:       0.33 MB
+
+     Dynamical RAM for                hpsi:       0.33 MB
+
+     Dynamical RAM for                spsi:       0.33 MB
+
+     Dynamical RAM for      wfcinit/wfcrot:       0.50 MB
+
+     Dynamical RAM for           addusdens:      33.83 MB
+
+     Dynamical RAM for          addusforce:      35.71 MB
+
+     Estimated static dynamical RAM per process >      25.65 MB
+
+     Estimated max dynamical RAM per process >      73.38 MB
+
+     Estimated total dynamical RAM >     146.77 MB
+
+     Initial potential from superposition of free atoms
+
+     starting charge    7.99998, renormalised to    8.00000
+
+     negative rho (up, down):  1.469E-04 0.000E+00
+     Starting wfcs are    6 randomized atomic wfcs
+     Checking if some PAW data can be deallocated... 
+       PAW data deallocated on    1 nodes for type:  1
+
+     total cpu time spent up to now is        1.4 secs
+
+     Self-consistent Calculation
+[tb_dev] Currently allocated     2.38E+01 Mbytes, locked:    0 /   9
+[tb_pin] Currently allocated     0.00E+00 Mbytes, locked:    0 /   0
+
+     iteration #  1     ecut=    46.65 Ry     beta= 0.70
+     Davidson diagonalization with overlap
+
+---- Real-time Memory Report at c_bands before calling an iterative solver
+           920 MiB given to the printing process from OS
+             0 MiB allocation reported by mallinfo(arena+hblkhd)
+          5446 MiB available memory on the node where the printing process lives
+     GPU memory used/free/total (MiB): 1164 / 11123 / 12288
+------------------
+     ethr =  1.00E-02,  avg # of iterations =  3.0
+
+     negative rho (up, down):  2.956E-04 0.000E+00
+
+     total cpu time spent up to now is        1.6 secs
+
+     total energy              =     -43.78565625 Ry
+     estimated scf accuracy    <       0.48893615 Ry
+[tb_dev] Currently allocated     8.25E+01 Mbytes, locked:    0 /  14
+[tb_pin] Currently allocated     7.52E-01 Mbytes, locked:    0 /   1
+
+     iteration #  2     ecut=    46.65 Ry     beta= 0.70
+     Davidson diagonalization with overlap
+
+---- Real-time Memory Report at c_bands before calling an iterative solver
+           950 MiB given to the printing process from OS
+             0 MiB allocation reported by mallinfo(arena+hblkhd)
+          5392 MiB available memory on the node where the printing process lives
+     GPU memory used/free/total (MiB): 1224 / 11063 / 12288
+------------------
+     ethr =  6.11E-03,  avg # of iterations =  5.0
+
+     negative rho (up, down):  3.171E-04 0.000E+00
+
+     total cpu time spent up to now is        1.8 secs
+
+     total energy              =     -43.97514561 Ry
+     estimated scf accuracy    <       0.21118120 Ry
+[tb_dev] Currently allocated     8.25E+01 Mbytes, locked:    0 /  14
+[tb_pin] Currently allocated     7.52E-01 Mbytes, locked:    0 /   1
+
+     iteration #  3     ecut=    46.65 Ry     beta= 0.70
+     Davidson diagonalization with overlap
+
+---- Real-time Memory Report at c_bands before calling an iterative solver
+           953 MiB given to the printing process from OS
+             0 MiB allocation reported by mallinfo(arena+hblkhd)
+          5388 MiB available memory on the node where the printing process lives
+     GPU memory used/free/total (MiB): 1224 / 11063 / 12288
+------------------
+     ethr =  2.64E-03,  avg # of iterations =  4.0
+
+     negative rho (up, down):  3.651E-04 0.000E+00
+
+     total cpu time spent up to now is        2.0 secs
+
+     total energy              =     -43.99444674 Ry
+     estimated scf accuracy    <       0.05597064 Ry
+[tb_dev] Currently allocated     8.25E+01 Mbytes, locked:    0 /  14
+[tb_pin] Currently allocated     7.52E-01 Mbytes, locked:    0 /   1
+
+     iteration #  4     ecut=    46.65 Ry     beta= 0.70
+     Davidson diagonalization with overlap
+
+---- Real-time Memory Report at c_bands before calling an iterative solver
+           957 MiB given to the printing process from OS
+             0 MiB allocation reported by mallinfo(arena+hblkhd)
+          5380 MiB available memory on the node where the printing process lives
+     GPU memory used/free/total (MiB): 1224 / 11063 / 12288
+------------------
+     ethr =  7.00E-04,  avg # of iterations =  4.0
+
+     negative rho (up, down):  5.115E-04 0.000E+00
+
+     total cpu time spent up to now is        2.2 secs
+
+     total energy              =     -44.03419773 Ry
+     estimated scf accuracy    <       0.00461272 Ry
+[tb_dev] Currently allocated     8.25E+01 Mbytes, locked:    0 /  14
+[tb_pin] Currently allocated     7.52E-01 Mbytes, locked:    0 /   1
+
+     iteration #  5     ecut=    46.65 Ry     beta= 0.70
+     Davidson diagonalization with overlap
+
+---- Real-time Memory Report at c_bands before calling an iterative solver
+           957 MiB given to the printing process from OS
+             0 MiB allocation reported by mallinfo(arena+hblkhd)
+          5378 MiB available memory on the node where the printing process lives
+     GPU memory used/free/total (MiB): 1224 / 11063 / 12288
+------------------
+     ethr =  5.77E-05,  avg # of iterations =  6.0
+
+     negative rho (up, down):  5.821E-04 0.000E+00
+
+     total cpu time spent up to now is        2.5 secs
+
+     total energy              =     -44.03577631 Ry
+     estimated scf accuracy    <       0.00626266 Ry
+[tb_dev] Currently allocated     8.25E+01 Mbytes, locked:    0 /  14
+[tb_pin] Currently allocated     7.52E-01 Mbytes, locked:    0 /   1
+
+     iteration #  6     ecut=    46.65 Ry     beta= 0.70
+     Davidson diagonalization with overlap
+
+---- Real-time Memory Report at c_bands before calling an iterative solver
+           959 MiB given to the printing process from OS
+             0 MiB allocation reported by mallinfo(arena+hblkhd)
+          5376 MiB available memory on the node where the printing process lives
+     GPU memory used/free/total (MiB): 1224 / 11063 / 12288
+------------------
+     ethr =  5.77E-05,  avg # of iterations =  2.0
+
+     negative rho (up, down):  5.908E-04 0.000E+00
+
+     total cpu time spent up to now is        2.7 secs
+
+     total energy              =     -44.03576873 Ry
+     estimated scf accuracy    <       0.00104617 Ry
+[tb_dev] Currently allocated     8.25E+01 Mbytes, locked:    0 /  14
+[tb_pin] Currently allocated     7.52E-01 Mbytes, locked:    0 /   1
+
+     iteration #  7     ecut=    46.65 Ry     beta= 0.70
+     Davidson diagonalization with overlap
+
+---- Real-time Memory Report at c_bands before calling an iterative solver
+           960 MiB given to the printing process from OS
+             0 MiB allocation reported by mallinfo(arena+hblkhd)
+          5374 MiB available memory on the node where the printing process lives
+     GPU memory used/free/total (MiB): 1224 / 11063 / 12288
+------------------
+     ethr =  1.31E-05,  avg # of iterations =  7.0
+
+     negative rho (up, down):  5.628E-04 0.000E+00
+
+     total cpu time spent up to now is        2.9 secs
+
+     total energy              =     -44.03726033 Ry
+     estimated scf accuracy    <       0.00222678 Ry
+[tb_dev] Currently allocated     8.25E+01 Mbytes, locked:    0 /  14
+[tb_pin] Currently allocated     7.52E-01 Mbytes, locked:    0 /   1
+
+     iteration #  8     ecut=    46.65 Ry     beta= 0.70
+     Davidson diagonalization with overlap
+
+---- Real-time Memory Report at c_bands before calling an iterative solver
+           961 MiB given to the printing process from OS
+             0 MiB allocation reported by mallinfo(arena+hblkhd)
+          5372 MiB available memory on the node where the printing process lives
+     GPU memory used/free/total (MiB): 1224 / 11063 / 12288
+------------------
+     ethr =  1.31E-05,  avg # of iterations =  1.0
+
+     negative rho (up, down):  5.661E-04 0.000E+00
+
+     total cpu time spent up to now is        3.1 secs
+
+     total energy              =     -44.03669309 Ry
+     estimated scf accuracy    <       0.00144854 Ry
+[tb_dev] Currently allocated     8.25E+01 Mbytes, locked:    0 /  14
+[tb_pin] Currently allocated     7.52E-01 Mbytes, locked:    0 /   1
+
+     iteration #  9     ecut=    46.65 Ry     beta= 0.70
+     Davidson diagonalization with overlap
+
+---- Real-time Memory Report at c_bands before calling an iterative solver
+           962 MiB given to the printing process from OS
+             0 MiB allocation reported by mallinfo(arena+hblkhd)
+          5370 MiB available memory on the node where the printing process lives
+     GPU memory used/free/total (MiB): 1224 / 11063 / 12288
+------------------
+     ethr =  1.31E-05,  avg # of iterations =  2.0
+
+     negative rho (up, down):  5.647E-04 0.000E+00
+
+     total cpu time spent up to now is        3.3 secs
+
+     total energy              =     -44.03674820 Ry
+     estimated scf accuracy    <       0.00031817 Ry
+[tb_dev] Currently allocated     8.25E+01 Mbytes, locked:    0 /  14
+[tb_pin] Currently allocated     7.52E-01 Mbytes, locked:    0 /   1
+
+     iteration # 10     ecut=    46.65 Ry     beta= 0.70
+     Davidson diagonalization with overlap
+
+---- Real-time Memory Report at c_bands before calling an iterative solver
+           963 MiB given to the printing process from OS
+             0 MiB allocation reported by mallinfo(arena+hblkhd)
+          5367 MiB available memory on the node where the printing process lives
+     GPU memory used/free/total (MiB): 1224 / 11063 / 12288
+------------------
+     ethr =  3.98E-06,  avg # of iterations =  6.0
+
+     negative rho (up, down):  5.702E-04 0.000E+00
+
+     total cpu time spent up to now is        3.6 secs
+
+     total energy              =     -44.03695659 Ry
+     estimated scf accuracy    <       0.00001071 Ry
+[tb_dev] Currently allocated     8.25E+01 Mbytes, locked:    0 /  14
+[tb_pin] Currently allocated     7.52E-01 Mbytes, locked:    0 /   1
+
+     iteration # 11     ecut=    46.65 Ry     beta= 0.70
+     Davidson diagonalization with overlap
+
+---- Real-time Memory Report at c_bands before calling an iterative solver
+           963 MiB given to the printing process from OS
+             0 MiB allocation reported by mallinfo(arena+hblkhd)
+          5367 MiB available memory on the node where the printing process lives
+     GPU memory used/free/total (MiB): 1224 / 11063 / 12288
+------------------
+     ethr =  1.34E-07,  avg # of iterations =  8.0
+
+     negative rho (up, down):  5.730E-04 0.000E+00
+
+     total cpu time spent up to now is        3.8 secs
+
+     total energy              =     -44.03699262 Ry
+     estimated scf accuracy    <       0.00001621 Ry
+[tb_dev] Currently allocated     8.25E+01 Mbytes, locked:    0 /  14
+[tb_pin] Currently allocated     7.52E-01 Mbytes, locked:    0 /   1
+
+     iteration # 12     ecut=    46.65 Ry     beta= 0.70
+     Davidson diagonalization with overlap
+
+---- Real-time Memory Report at c_bands before calling an iterative solver
+           964 MiB given to the printing process from OS
+             0 MiB allocation reported by mallinfo(arena+hblkhd)
+          5367 MiB available memory on the node where the printing process lives
+     GPU memory used/free/total (MiB): 1224 / 11063 / 12288
+------------------
+     ethr =  1.34E-07,  avg # of iterations =  4.0
+
+     negative rho (up, down):  5.736E-04 0.000E+00
+
+     total cpu time spent up to now is        4.0 secs
+
+     total energy              =     -44.03699686 Ry
+     estimated scf accuracy    <       0.00000108 Ry
+[tb_dev] Currently allocated     8.25E+01 Mbytes, locked:    0 /  14
+[tb_pin] Currently allocated     7.52E-01 Mbytes, locked:    0 /   1
+
+     iteration # 13     ecut=    46.65 Ry     beta= 0.70
+     Davidson diagonalization with overlap
+
+---- Real-time Memory Report at c_bands before calling an iterative solver
+           964 MiB given to the printing process from OS
+             0 MiB allocation reported by mallinfo(arena+hblkhd)
+          5367 MiB available memory on the node where the printing process lives
+     GPU memory used/free/total (MiB): 1224 / 11063 / 12288
+------------------
+     ethr =  1.35E-08,  avg # of iterations =  5.0
+
+     negative rho (up, down):  5.734E-04 0.000E+00
+
+     total cpu time spent up to now is        4.3 secs
+
+     total energy              =     -44.03699671 Ry
+     estimated scf accuracy    <       0.00000323 Ry
+[tb_dev] Currently allocated     8.25E+01 Mbytes, locked:    0 /  14
+[tb_pin] Currently allocated     7.52E-01 Mbytes, locked:    0 /   1
+
+     iteration # 14     ecut=    46.65 Ry     beta= 0.70
+     Davidson diagonalization with overlap
+
+---- Real-time Memory Report at c_bands before calling an iterative solver
+           964 MiB given to the printing process from OS
+             0 MiB allocation reported by mallinfo(arena+hblkhd)
+          5366 MiB available memory on the node where the printing process lives
+     GPU memory used/free/total (MiB): 1224 / 11063 / 12288
+------------------
+     ethr =  1.35E-08,  avg # of iterations =  2.0
+
+     negative rho (up, down):  5.735E-04 0.000E+00
+
+     total cpu time spent up to now is        4.5 secs
+
+     total energy              =     -44.03699657 Ry
+     estimated scf accuracy    <       0.00000156 Ry
+[tb_dev] Currently allocated     8.25E+01 Mbytes, locked:    0 /  14
+[tb_pin] Currently allocated     7.52E-01 Mbytes, locked:    0 /   1
+
+     iteration # 15     ecut=    46.65 Ry     beta= 0.70
+     Davidson diagonalization with overlap
+
+---- Real-time Memory Report at c_bands before calling an iterative solver
+           966 MiB given to the printing process from OS
+             0 MiB allocation reported by mallinfo(arena+hblkhd)
+          5366 MiB available memory on the node where the printing process lives
+     GPU memory used/free/total (MiB): 1224 / 11063 / 12288
+------------------
+     ethr =  1.35E-08,  avg # of iterations =  2.0
+
+     negative rho (up, down):  5.741E-04 0.000E+00
+
+     total cpu time spent up to now is        4.7 secs
+
+     End of self-consistent calculation
+
+          k = 0.0000 0.0000 0.0000 (  5409 PWs)   bands (ev):
+
+   -24.8423 -12.6082  -8.8517  -6.7428
+
+     occupation numbers 
+     1.0000   1.0000   1.0000   1.0000
+
+     highest occupied level (ev):    -6.7428
+
+!    total energy              =     -44.03699599 Ry
+
+     total all-electron energy =      -152.883877 Ry
+     estimated scf accuracy    <       0.00000079 Ry
+
+     The total energy is the sum of the following terms:
+     one-electron contribution =     -54.11488979 Ry
+     hartree contribution      =      28.85134716 Ry
+     xc contribution           =      -8.86248763 Ry
+     ewald contribution        =      -0.32391207 Ry
+     one-center paw contrib.   =      -9.58705366 Ry
+      -> PAW hartree energy AE =      29.01645112 Ry
+      -> PAW hartree energy PS =     -28.98215335 Ry
+      -> PAW xc energy AE      =     -17.67079940 Ry
+      -> PAW xc energy PS      =       8.04958204 Ry
+      -> total E_H with PAW    =      28.88564493 Ry
+      -> total E_XC with PAW   =     -18.48370499 Ry
+
+     convergence has been achieved in  15 iterations
+
+     negative rho (up, down):  5.741E-04 0.000E+00
+
+     Forces acting on atoms (cartesian axes, Ry/au):
+
+     atom    1 type  1   force =     0.00000000    0.00000000    0.00547248
+     atom    2 type  2   force =     0.00000000    0.00431963   -0.00273624
+     atom    3 type  2   force =     0.00000000   -0.00431963   -0.00273624
+     The non-local contrib.  to forces
+     atom    1 type  1   force =     0.00000000    0.00000000   -2.49865133
+     atom    2 type  2   force =    -0.00000000   -0.08906634    0.06472728
+     atom    3 type  2   force =     0.00000000    0.08906634    0.06472728
+     The ionic contribution  to forces
+     atom    1 type  1   force =     0.00000000    0.00000000    4.35405234
+     atom    2 type  2   force =    -0.00000000    3.03858598   -2.17702617
+     atom    3 type  2   force =     0.00000000   -3.03858598   -2.17702617
+     The local contribution  to forces
+     atom    1 type  1   force =    -0.00043539    0.00015981   -1.86955048
+     atom    2 type  2   force =    -0.00000120   -2.94543935    2.11002426
+     atom    3 type  2   force =     0.00000526    2.94536244    2.10996371
+     The core correction contribution to forces
+     atom    1 type  1   force =    -0.00000734    0.00000376    0.02021860
+     atom    2 type  2   force =     0.00000000    0.00000000    0.00000000
+     atom    3 type  2   force =     0.00000000    0.00000000    0.00000000
+     The Hubbard contrib.    to forces
+     atom    1 type  1   force =     0.00000000    0.00000000    0.00000000
+     atom    2 type  2   force =     0.00000000    0.00000000    0.00000000
+     atom    3 type  2   force =     0.00000000    0.00000000    0.00000000
+     The SCF correction term to forces
+     atom    1 type  1   force =     0.00007327   -0.00010696   -0.00035232
+     atom    2 type  2   force =     0.00000043    0.00020662   -0.00019156
+     atom    3 type  2   force =     0.00000266   -0.00019516   -0.00018244
+
+     Total force =     0.009069     Total SCF correction =     0.000540
+
+     BFGS Geometry Optimization
+     Energy error            =      0.0E+00 Ry
+     Gradient error          =      5.5E-03 Ry/Bohr
+
+     number of scf cycles    =   1
+     number of bfgs steps    =   0
+
+     energy             new  =     -44.0369959948 Ry
+
+     new trust radius        =       0.0054724760 bohr
+     new conv_thr            =       0.0000010000 Ry
+
+
+ATOMIC_POSITIONS (angstrom)
+O             3.0000000000        3.7632390000        3.5992049096
+H             3.0000000000        4.5287638522        2.9985520452
+H             3.0000000000        2.9977141478        2.9985520452
+
+
+
+     Writing output data file ./water.save/
+     NEW-OLD atomic charge density approx. for the potential
+
+     negative rho (up, down):  5.647E-04 0.000E+00
+
+     total cpu time spent up to now is        5.5 secs
+
+     Self-consistent Calculation
+[tb_dev] Currently allocated     0.00E+00 Mbytes, locked:    0 /   0
+[tb_pin] Currently allocated     7.52E-01 Mbytes, locked:    0 /   1
+
+     iteration #  1     ecut=    46.65 Ry     beta= 0.70
+     Davidson diagonalization with overlap
+
+---- Real-time Memory Report at c_bands before calling an iterative solver
+           995 MiB given to the printing process from OS
+             0 MiB allocation reported by mallinfo(arena+hblkhd)
+          5362 MiB available memory on the node where the printing process lives
+     GPU memory used/free/total (MiB): 1141 / 11146 / 12288
+------------------
+     ethr =  1.00E-06,  avg # of iterations =  5.0
+
+     negative rho (up, down):  5.648E-04 0.000E+00
+
+     total cpu time spent up to now is        5.7 secs
+
+     total energy              =     -44.03697724 Ry
+     estimated scf accuracy    <       0.00007626 Ry
+[tb_dev] Currently allocated     8.25E+01 Mbytes, locked:    0 /  12
+[tb_pin] Currently allocated     7.52E-01 Mbytes, locked:    0 /   1
+
+     iteration #  2     ecut=    46.65 Ry     beta= 0.70
+     Davidson diagonalization with overlap
+
+---- Real-time Memory Report at c_bands before calling an iterative solver
+           995 MiB given to the printing process from OS
+             0 MiB allocation reported by mallinfo(arena+hblkhd)
+          5363 MiB available memory on the node where the printing process lives
+     GPU memory used/free/total (MiB): 1224 / 11063 / 12288
+------------------
+     ethr =  9.53E-07,  avg # of iterations =  5.0
+
+     negative rho (up, down):  5.677E-04 0.000E+00
+
+     total cpu time spent up to now is        5.9 secs
+
+     total energy              =     -44.03700332 Ry
+     estimated scf accuracy    <       0.00002515 Ry
+[tb_dev] Currently allocated     8.25E+01 Mbytes, locked:    0 /  12
+[tb_pin] Currently allocated     7.52E-01 Mbytes, locked:    0 /   1
+
+     iteration #  3     ecut=    46.65 Ry     beta= 0.70
+     Davidson diagonalization with overlap
+
+---- Real-time Memory Report at c_bands before calling an iterative solver
+           995 MiB given to the printing process from OS
+             0 MiB allocation reported by mallinfo(arena+hblkhd)
+          5362 MiB available memory on the node where the printing process lives
+     GPU memory used/free/total (MiB): 1224 / 11063 / 12288
+------------------
+     ethr =  3.14E-07,  avg # of iterations =  4.0
+
+     negative rho (up, down):  5.693E-04 0.000E+00
+
+     total cpu time spent up to now is        6.1 secs
+
+     total energy              =     -44.03700493 Ry
+     estimated scf accuracy    <       0.00000651 Ry
+[tb_dev] Currently allocated     8.25E+01 Mbytes, locked:    0 /  12
+[tb_pin] Currently allocated     7.52E-01 Mbytes, locked:    0 /   1
+
+     iteration #  4     ecut=    46.65 Ry     beta= 0.70
+     Davidson diagonalization with overlap
+
+---- Real-time Memory Report at c_bands before calling an iterative solver
+           995 MiB given to the printing process from OS
+             0 MiB allocation reported by mallinfo(arena+hblkhd)
+          5362 MiB available memory on the node where the printing process lives
+     GPU memory used/free/total (MiB): 1224 / 11063 / 12288
+------------------
+     ethr =  8.14E-08,  avg # of iterations =  5.0
+
+     negative rho (up, down):  5.684E-04 0.000E+00
+
+     total cpu time spent up to now is        6.3 secs
+
+     total energy              =     -44.03701003 Ry
+     estimated scf accuracy    <       0.00000229 Ry
+[tb_dev] Currently allocated     8.25E+01 Mbytes, locked:    0 /  12
+[tb_pin] Currently allocated     7.52E-01 Mbytes, locked:    0 /   1
+
+     iteration #  5     ecut=    46.65 Ry     beta= 0.70
+     Davidson diagonalization with overlap
+
+---- Real-time Memory Report at c_bands before calling an iterative solver
+           995 MiB given to the printing process from OS
+             0 MiB allocation reported by mallinfo(arena+hblkhd)
+          5362 MiB available memory on the node where the printing process lives
+     GPU memory used/free/total (MiB): 1224 / 11063 / 12288
+------------------
+     ethr =  2.86E-08,  avg # of iterations =  2.0
+
+     negative rho (up, down):  5.682E-04 0.000E+00
+
+     total cpu time spent up to now is        6.5 secs
+
+     End of self-consistent calculation
+
+          k = 0.0000 0.0000 0.0000 (  5409 PWs)   bands (ev):
+
+   -24.7959 -12.5552  -8.8565  -6.7335
+
+     occupation numbers 
+     1.0000   1.0000   1.0000   1.0000
+
+     highest occupied level (ev):    -6.7335
+
+!    total energy              =     -44.03701021 Ry
+
+     total all-electron energy =      -152.883892 Ry
+     estimated scf accuracy    <       0.00000020 Ry
+
+     The total energy is the sum of the following terms:
+     one-electron contribution =     -54.00466033 Ry
+     hartree contribution      =      28.79269719 Ry
+     xc contribution           =      -8.85234938 Ry
+     ewald contribution        =      -0.38564547 Ry
+     one-center paw contrib.   =      -9.58705222 Ry
+      -> PAW hartree energy AE =      28.88927388 Ry
+      -> PAW hartree energy PS =     -28.85504770 Ry
+      -> PAW xc energy AE      =     -17.64580213 Ry
+      -> PAW xc energy PS      =       8.02465817 Ry
+      -> total E_H with PAW    =      28.82692337 Ry
+      -> total E_XC with PAW   =     -18.47349334 Ry
+
+     convergence has been achieved in   5 iterations
+
+     negative rho (up, down):  5.682E-04 0.000E+00
+
+     Forces acting on atoms (cartesian axes, Ry/au):
+
+     atom    1 type  1   force =     0.00000000    0.00000000   -0.00459384
+     atom    2 type  2   force =     0.00000000   -0.00164692    0.00229692
+     atom    3 type  2   force =     0.00000000    0.00164692    0.00229692
+     The non-local contrib.  to forces
+     atom    1 type  1   force =     0.00000000    0.00000000   -2.49834487
+     atom    2 type  2   force =     0.00000000   -0.08745352    0.06383777
+     atom    3 type  2   force =     0.00000000    0.08745352    0.06383777
+     The ionic contribution  to forces
+     atom    1 type  1   force =     0.00000000    0.00000000    4.32471305
+     atom    2 type  2   force =     0.00000000    3.00662442   -2.16235653
+     atom    3 type  2   force =     0.00000000   -3.00662442   -2.16235653
+     The local contribution  to forces
+     atom    1 type  1   force =     0.00008616   -0.00004711   -1.85142164
+     atom    2 type  2   force =    -0.00000454   -2.92075056    2.10074505
+     atom    3 type  2   force =    -0.00000407    2.92076757    2.10075831
+     The core correction contribution to forces
+     atom    1 type  1   force =     0.00000095   -0.00000111    0.02032989
+     atom    2 type  2   force =     0.00000000    0.00000000    0.00000000
+     atom    3 type  2   force =     0.00000000    0.00000000    0.00000000
+     The Hubbard contrib.    to forces
+     atom    1 type  1   force =     0.00000000    0.00000000    0.00000000
+     atom    2 type  2   force =     0.00000000    0.00000000    0.00000000
+     atom    3 type  2   force =     0.00000000    0.00000000    0.00000000
+     The SCF correction term to forces
+     atom    1 type  1   force =     0.00006062   -0.00003012    0.00011187
+     atom    2 type  2   force =     0.00000345   -0.00005658    0.00004410
+     atom    3 type  2   force =     0.00000354    0.00006093    0.00004819
+
+     Total force =     0.006089     Total SCF correction =     0.000168
+     Energy error            =      1.4E-05 Ry
+     Gradient error          =      4.6E-03 Ry/Bohr
+
+     number of scf cycles    =   2
+     number of bfgs steps    =   1
+
+     energy             old  =     -44.0369959948 Ry
+     energy             new  =     -44.0370102075 Ry
+
+     CASE: energy            _new < energy            _old
+
+     new trust radius        =       0.0027086814 bohr
+     new conv_thr            =       0.0000000100 Ry
+
+
+ATOMIC_POSITIONS (angstrom)
+O             3.0000000000        3.7632390000        3.5977715371
+H             3.0000000000        4.5282743663        2.9992687315
+H             3.0000000000        2.9982036337        2.9992687315
+
+
+
+     Writing output data file ./water.save/
+     NEW-OLD atomic charge density approx. for the potential
+
+     negative rho (up, down):  5.710E-04 0.000E+00
+
+     total cpu time spent up to now is        7.3 secs
+
+     Self-consistent Calculation
+[tb_dev] Currently allocated     0.00E+00 Mbytes, locked:    0 /   0
+[tb_pin] Currently allocated     7.52E-01 Mbytes, locked:    0 /   1
+
+     iteration #  1     ecut=    46.65 Ry     beta= 0.70
+     Davidson diagonalization with overlap
+
+---- Real-time Memory Report at c_bands before calling an iterative solver
+           997 MiB given to the printing process from OS
+             0 MiB allocation reported by mallinfo(arena+hblkhd)
+          5357 MiB available memory on the node where the printing process lives
+     GPU memory used/free/total (MiB): 1141 / 11146 / 12288
+------------------
+     ethr =  1.00E-06,  avg # of iterations =  3.0
+
+     negative rho (up, down):  5.720E-04 0.000E+00
+
+     total cpu time spent up to now is        7.5 secs
+
+     total energy              =     -44.03701338 Ry
+     estimated scf accuracy    <       0.00001618 Ry
+[tb_dev] Currently allocated     8.25E+01 Mbytes, locked:    0 /  12
+[tb_pin] Currently allocated     7.52E-01 Mbytes, locked:    0 /   1
+
+     iteration #  2     ecut=    46.65 Ry     beta= 0.70
+     Davidson diagonalization with overlap
+
+---- Real-time Memory Report at c_bands before calling an iterative solver
+           997 MiB given to the printing process from OS
+             0 MiB allocation reported by mallinfo(arena+hblkhd)
+          5356 MiB available memory on the node where the printing process lives
+     GPU memory used/free/total (MiB): 1224 / 11063 / 12288
+------------------
+     ethr =  2.02E-07,  avg # of iterations =  5.0
+
+     negative rho (up, down):  5.705E-04 0.000E+00
+
+     total cpu time spent up to now is        7.7 secs
+
+     total energy              =     -44.03702159 Ry
+     estimated scf accuracy    <       0.00000916 Ry
+[tb_dev] Currently allocated     8.25E+01 Mbytes, locked:    0 /  12
+[tb_pin] Currently allocated     7.52E-01 Mbytes, locked:    0 /   1
+
+     iteration #  3     ecut=    46.65 Ry     beta= 0.70
+     Davidson diagonalization with overlap
+
+---- Real-time Memory Report at c_bands before calling an iterative solver
+           997 MiB given to the printing process from OS
+             0 MiB allocation reported by mallinfo(arena+hblkhd)
+          5355 MiB available memory on the node where the printing process lives
+     GPU memory used/free/total (MiB): 1224 / 11063 / 12288
+------------------
+     ethr =  1.14E-07,  avg # of iterations =  2.0
+
+     negative rho (up, down):  5.698E-04 0.000E+00
+
+     total cpu time spent up to now is        7.9 secs
+
+     total energy              =     -44.03702173 Ry
+     estimated scf accuracy    <       0.00000143 Ry
+[tb_dev] Currently allocated     8.25E+01 Mbytes, locked:    0 /  12
+[tb_pin] Currently allocated     7.52E-01 Mbytes, locked:    0 /   1
+
+     iteration #  4     ecut=    46.65 Ry     beta= 0.70
+     Davidson diagonalization with overlap
+
+---- Real-time Memory Report at c_bands before calling an iterative solver
+           997 MiB given to the printing process from OS
+             0 MiB allocation reported by mallinfo(arena+hblkhd)
+          5355 MiB available memory on the node where the printing process lives
+     GPU memory used/free/total (MiB): 1224 / 11063 / 12288
+------------------
+     ethr =  1.79E-08,  avg # of iterations =  5.0
+
+     negative rho (up, down):  5.703E-04 0.000E+00
+
+     total cpu time spent up to now is        8.1 secs
+
+     total energy              =     -44.03702319 Ry
+     estimated scf accuracy    <       0.00000060 Ry
+[tb_dev] Currently allocated     8.25E+01 Mbytes, locked:    0 /  12
+[tb_pin] Currently allocated     7.52E-01 Mbytes, locked:    0 /   1
+
+     iteration #  5     ecut=    46.65 Ry     beta= 0.70
+     Davidson diagonalization with overlap
+
+---- Real-time Memory Report at c_bands before calling an iterative solver
+           997 MiB given to the printing process from OS
+             0 MiB allocation reported by mallinfo(arena+hblkhd)
+          5354 MiB available memory on the node where the printing process lives
+     GPU memory used/free/total (MiB): 1224 / 11063 / 12288
+------------------
+     ethr =  7.49E-09,  avg # of iterations =  2.0
+
+     negative rho (up, down):  5.707E-04 0.000E+00
+
+     total cpu time spent up to now is        8.3 secs
+
+     total energy              =     -44.03702316 Ry
+     estimated scf accuracy    <       0.00000017 Ry
+[tb_dev] Currently allocated     8.25E+01 Mbytes, locked:    0 /  12
+[tb_pin] Currently allocated     7.52E-01 Mbytes, locked:    0 /   1
+
+     iteration #  6     ecut=    46.65 Ry     beta= 0.70
+     Davidson diagonalization with overlap
+
+---- Real-time Memory Report at c_bands before calling an iterative solver
+           997 MiB given to the printing process from OS
+             0 MiB allocation reported by mallinfo(arena+hblkhd)
+          5352 MiB available memory on the node where the printing process lives
+     GPU memory used/free/total (MiB): 1224 / 11063 / 12288
+------------------
+     ethr =  2.15E-09,  avg # of iterations =  4.0
+
+     negative rho (up, down):  5.706E-04 0.000E+00
+
+     total cpu time spent up to now is        8.5 secs
+
+     total energy              =     -44.03702334 Ry
+     estimated scf accuracy    <       0.00000006 Ry
+[tb_dev] Currently allocated     8.25E+01 Mbytes, locked:    0 /  12
+[tb_pin] Currently allocated     7.52E-01 Mbytes, locked:    0 /   1
+
+     iteration #  7     ecut=    46.65 Ry     beta= 0.70
+     Davidson diagonalization with overlap
+
+---- Real-time Memory Report at c_bands before calling an iterative solver
+           997 MiB given to the printing process from OS
+             0 MiB allocation reported by mallinfo(arena+hblkhd)
+          5351 MiB available memory on the node where the printing process lives
+     GPU memory used/free/total (MiB): 1224 / 11063 / 12288
+------------------
+     ethr =  7.02E-10,  avg # of iterations =  2.0
+
+     negative rho (up, down):  5.705E-04 0.000E+00
+
+     total cpu time spent up to now is        8.7 secs
+
+     total energy              =     -44.03702334 Ry
+     estimated scf accuracy    <       0.00000004 Ry
+[tb_dev] Currently allocated     8.25E+01 Mbytes, locked:    0 /  12
+[tb_pin] Currently allocated     7.52E-01 Mbytes, locked:    0 /   1
+
+     iteration #  8     ecut=    46.65 Ry     beta= 0.70
+     Davidson diagonalization with overlap
+
+---- Real-time Memory Report at c_bands before calling an iterative solver
+           997 MiB given to the printing process from OS
+             0 MiB allocation reported by mallinfo(arena+hblkhd)
+          5348 MiB available memory on the node where the printing process lives
+     GPU memory used/free/total (MiB): 1224 / 11063 / 12288
+------------------
+     ethr =  5.01E-10,  avg # of iterations =  1.0
+
+     negative rho (up, down):  5.704E-04 0.000E+00
+
+     total cpu time spent up to now is        9.0 secs
+
+     total energy              =     -44.03702333 Ry
+     estimated scf accuracy    <       0.00000003 Ry
+[tb_dev] Currently allocated     8.25E+01 Mbytes, locked:    0 /  12
+[tb_pin] Currently allocated     7.52E-01 Mbytes, locked:    0 /   1
+
+     iteration #  9     ecut=    46.65 Ry     beta= 0.70
+     Davidson diagonalization with overlap
+
+---- Real-time Memory Report at c_bands before calling an iterative solver
+           997 MiB given to the printing process from OS
+             0 MiB allocation reported by mallinfo(arena+hblkhd)
+          5346 MiB available memory on the node where the printing process lives
+     GPU memory used/free/total (MiB): 1224 / 11063 / 12288
+------------------
+     ethr =  3.31E-10,  avg # of iterations =  4.0
+
+     negative rho (up, down):  5.706E-04 0.000E+00
+
+     total cpu time spent up to now is        9.2 secs
+
+     End of self-consistent calculation
+
+          k = 0.0000 0.0000 0.0000 (  5409 PWs)   bands (ev):
+
+   -24.8100 -12.5773  -8.8489  -6.7344
+
+     occupation numbers 
+     1.0000   1.0000   1.0000   1.0000
+
+     highest occupied level (ev):    -6.7344
+
+!    total energy              =     -44.03702334 Ry
+
+     total all-electron energy =      -152.883905 Ry
+     estimated scf accuracy    <          1.5E-09 Ry
+
+     The total energy is the sum of the following terms:
+     one-electron contribution =     -54.04644603 Ry
+     hartree contribution      =      28.81524478 Ry
+     xc contribution           =      -8.85628836 Ry
+     ewald contribution        =      -0.36248401 Ry
+     one-center paw contrib.   =      -9.58704972 Ry
+      -> PAW hartree energy AE =      28.93886352 Ry
+      -> PAW hartree energy PS =     -28.90460928 Ry
+      -> PAW xc energy AE      =     -17.65551829 Ry
+      -> PAW xc energy PS      =       8.03434864 Ry
+      -> total E_H with PAW    =      28.84949901 Ry
+      -> total E_XC with PAW   =     -18.47745801 Ry
+
+     convergence has been achieved in   9 iterations
+
+     negative rho (up, down):  5.706E-04 0.000E+00
+
+     Forces acting on atoms (cartesian axes, Ry/au):
+
+     atom    1 type  1   force =     0.00000000    0.00000000   -0.00074150
+     atom    2 type  2   force =     0.00000000    0.00040292    0.00037075
+     atom    3 type  2   force =     0.00000000   -0.00040292    0.00037075
+     The non-local contrib.  to forces
+     atom    1 type  1   force =     0.00000000    0.00000000   -2.49857959
+     atom    2 type  2   force =     0.00000000   -0.08811854    0.06410809
+     atom    3 type  2   force =     0.00000000    0.08811854    0.06410809
+     The ionic contribution  to forces
+     atom    1 type  1   force =    -0.00000000   -0.00000000    4.33235655
+     atom    2 type  2   force =    -0.00000000    3.01993206   -2.16617828
+     atom    3 type  2   force =    -0.00000000   -3.01993206   -2.16617828
+     The local contribution  to forces
+     atom    1 type  1   force =     0.00004092   -0.00006215   -1.85488901
+     atom    2 type  2   force =    -0.00000508   -2.93140942    2.10241359
+     atom    3 type  2   force =    -0.00000729    2.93141447    2.10241836
+     The core correction contribution to forces
+     atom    1 type  1   force =     0.00000090   -0.00000066    0.02029940
+     atom    2 type  2   force =     0.00000000    0.00000000    0.00000000
+     atom    3 type  2   force =     0.00000000    0.00000000    0.00000000
+     The Hubbard contrib.    to forces
+     atom    1 type  1   force =     0.00000000    0.00000000    0.00000000
+     atom    2 type  2   force =     0.00000000    0.00000000    0.00000000
+     atom    3 type  2   force =     0.00000000    0.00000000    0.00000000
+     The SCF correction term to forces
+     atom    1 type  1   force =     0.00005424    0.00003495    0.00004448
+     atom    2 type  2   force =     0.00000487    0.00000048    0.00000000
+     atom    3 type  2   force =     0.00000517   -0.00000222   -0.00000339
+
+     Total force =     0.001072     Total SCF correction =     0.000079
+     Energy error            =      1.3E-05 Ry
+     Gradient error          =      7.4E-04 Ry/Bohr
+
+     number of scf cycles    =   3
+     number of bfgs steps    =   2
+
+     energy             old  =     -44.0370102075 Ry
+     energy             new  =     -44.0370233369 Ry
+
+     CASE: energy            _new < energy            _old
+
+     new trust radius        =       0.0007591586 bohr
+     new conv_thr            =       0.0000000100 Ry
+
+
+ATOMIC_POSITIONS (angstrom)
+O             3.0000000000        3.7632390000        3.5973698077
+H             3.0000000000        4.5285479411        2.9994695962
+H             3.0000000000        2.9979300589        2.9994695962
+
+
+
+     Writing output data file ./water.save/
+     NEW-OLD atomic charge density approx. for the potential
+
+     negative rho (up, down):  5.702E-04 0.000E+00
+
+     total cpu time spent up to now is        9.9 secs
+
+     Self-consistent Calculation
+[tb_dev] Currently allocated     0.00E+00 Mbytes, locked:    0 /   0
+[tb_pin] Currently allocated     7.52E-01 Mbytes, locked:    0 /   1
+
+     iteration #  1     ecut=    46.65 Ry     beta= 0.70
+     Davidson diagonalization with overlap
+
+---- Real-time Memory Report at c_bands before calling an iterative solver
+           997 MiB given to the printing process from OS
+             0 MiB allocation reported by mallinfo(arena+hblkhd)
+          5345 MiB available memory on the node where the printing process lives
+     GPU memory used/free/total (MiB): 1141 / 11146 / 12288
+------------------
+     ethr =  1.00E-06,  avg # of iterations =  2.0
+
+     Threshold (ethr) on eigenvalues was too large:
+     Diagonalizing with lowered threshold
+
+     Davidson diagonalization with overlap
+
+---- Real-time Memory Report at c_bands before calling an iterative solver
+           997 MiB given to the printing process from OS
+             0 MiB allocation reported by mallinfo(arena+hblkhd)
+          5345 MiB available memory on the node where the printing process lives
+     GPU memory used/free/total (MiB): 1224 / 11063 / 12288
+------------------
+     ethr =  4.62E-09,  avg # of iterations =  6.0
+
+     negative rho (up, down):  5.708E-04 0.000E+00
+
+     total cpu time spent up to now is       10.2 secs
+
+     total energy              =     -44.03702409 Ry
+     estimated scf accuracy    <       0.00000027 Ry
+[tb_dev] Currently allocated     8.25E+01 Mbytes, locked:    0 /  12
+[tb_pin] Currently allocated     7.52E-01 Mbytes, locked:    0 /   1
+
+     iteration #  2     ecut=    46.65 Ry     beta= 0.70
+     Davidson diagonalization with overlap
+
+---- Real-time Memory Report at c_bands before calling an iterative solver
+           997 MiB given to the printing process from OS
+             0 MiB allocation reported by mallinfo(arena+hblkhd)
+          5345 MiB available memory on the node where the printing process lives
+     GPU memory used/free/total (MiB): 1224 / 11063 / 12288
+------------------
+     ethr =  3.42E-09,  avg # of iterations =  6.0
+
+     negative rho (up, down):  5.707E-04 0.000E+00
+
+     total cpu time spent up to now is       10.4 secs
+
+     total energy              =     -44.03702422 Ry
+     estimated scf accuracy    <       0.00000018 Ry
+[tb_dev] Currently allocated     8.25E+01 Mbytes, locked:    0 /  12
+[tb_pin] Currently allocated     7.52E-01 Mbytes, locked:    0 /   1
+
+     iteration #  3     ecut=    46.65 Ry     beta= 0.70
+     Davidson diagonalization with overlap
+
+---- Real-time Memory Report at c_bands before calling an iterative solver
+           997 MiB given to the printing process from OS
+             0 MiB allocation reported by mallinfo(arena+hblkhd)
+          5344 MiB available memory on the node where the printing process lives
+     GPU memory used/free/total (MiB): 1224 / 11063 / 12288
+------------------
+     ethr =  2.20E-09,  avg # of iterations =  2.0
+
+     negative rho (up, down):  5.707E-04 0.000E+00
+
+     total cpu time spent up to now is       10.6 secs
+
+     total energy              =     -44.03702420 Ry
+     estimated scf accuracy    <       0.00000004 Ry
+[tb_dev] Currently allocated     8.25E+01 Mbytes, locked:    0 /  12
+[tb_pin] Currently allocated     7.52E-01 Mbytes, locked:    0 /   1
+
+     iteration #  4     ecut=    46.65 Ry     beta= 0.70
+     Davidson diagonalization with overlap
+
+---- Real-time Memory Report at c_bands before calling an iterative solver
+           997 MiB given to the printing process from OS
+             0 MiB allocation reported by mallinfo(arena+hblkhd)
+          5343 MiB available memory on the node where the printing process lives
+     GPU memory used/free/total (MiB): 1224 / 11063 / 12288
+------------------
+     ethr =  5.59E-10,  avg # of iterations =  5.0
+
+     negative rho (up, down):  5.708E-04 0.000E+00
+
+     total cpu time spent up to now is       10.9 secs
+
+     total energy              =     -44.03702425 Ry
+     estimated scf accuracy    <       0.00000005 Ry
+[tb_dev] Currently allocated     8.25E+01 Mbytes, locked:    0 /  12
+[tb_pin] Currently allocated     7.52E-01 Mbytes, locked:    0 /   1
+
+     iteration #  5     ecut=    46.65 Ry     beta= 0.70
+     Davidson diagonalization with overlap
+
+---- Real-time Memory Report at c_bands before calling an iterative solver
+           997 MiB given to the printing process from OS
+             0 MiB allocation reported by mallinfo(arena+hblkhd)
+          5343 MiB available memory on the node where the printing process lives
+     GPU memory used/free/total (MiB): 1224 / 11063 / 12288
+------------------
+     ethr =  5.59E-10,  avg # of iterations =  1.0
+
+     negative rho (up, down):  5.709E-04 0.000E+00
+
+     total cpu time spent up to now is       11.1 secs
+
+     total energy              =     -44.03702424 Ry
+     estimated scf accuracy    <       0.00000001 Ry
+[tb_dev] Currently allocated     8.25E+01 Mbytes, locked:    0 /  12
+[tb_pin] Currently allocated     7.52E-01 Mbytes, locked:    0 /   1
+
+     iteration #  6     ecut=    46.65 Ry     beta= 0.70
+     Davidson diagonalization with overlap
+
+---- Real-time Memory Report at c_bands before calling an iterative solver
+           997 MiB given to the printing process from OS
+             0 MiB allocation reported by mallinfo(arena+hblkhd)
+          5342 MiB available memory on the node where the printing process lives
+     GPU memory used/free/total (MiB): 1224 / 11063 / 12288
+------------------
+     ethr =  1.77E-10,  avg # of iterations =  7.0
+
+     negative rho (up, down):  5.708E-04 0.000E+00
+
+     total cpu time spent up to now is       11.3 secs
+
+     total energy              =     -44.03702425 Ry
+     estimated scf accuracy    <       0.00000001 Ry
+[tb_dev] Currently allocated     8.25E+01 Mbytes, locked:    0 /  12
+[tb_pin] Currently allocated     7.52E-01 Mbytes, locked:    0 /   1
+
+     iteration #  7     ecut=    46.65 Ry     beta= 0.70
+     Davidson diagonalization with overlap
+
+---- Real-time Memory Report at c_bands before calling an iterative solver
+           997 MiB given to the printing process from OS
+             0 MiB allocation reported by mallinfo(arena+hblkhd)
+          5340 MiB available memory on the node where the printing process lives
+     GPU memory used/free/total (MiB): 1224 / 11063 / 12288
+------------------
+     ethr =  1.40E-10,  avg # of iterations =  2.0
+
+     negative rho (up, down):  5.708E-04 0.000E+00
+
+     total cpu time spent up to now is       11.5 secs
+
+     total energy              =     -44.03702425 Ry
+     estimated scf accuracy    <       0.00000002 Ry
+[tb_dev] Currently allocated     8.25E+01 Mbytes, locked:    0 /  12
+[tb_pin] Currently allocated     7.52E-01 Mbytes, locked:    0 /   1
+
+     iteration #  8     ecut=    46.65 Ry     beta= 0.70
+     Davidson diagonalization with overlap
+
+---- Real-time Memory Report at c_bands before calling an iterative solver
+           997 MiB given to the printing process from OS
+             0 MiB allocation reported by mallinfo(arena+hblkhd)
+          5338 MiB available memory on the node where the printing process lives
+     GPU memory used/free/total (MiB): 1224 / 11063 / 12288
+------------------
+     ethr =  1.40E-10,  avg # of iterations =  1.0
+
+     negative rho (up, down):  5.708E-04 0.000E+00
+
+     total cpu time spent up to now is       11.8 secs
+
+     total energy              =     -44.03702425 Ry
+     estimated scf accuracy    <       0.00000002 Ry
+[tb_dev] Currently allocated     8.25E+01 Mbytes, locked:    0 /  12
+[tb_pin] Currently allocated     7.52E-01 Mbytes, locked:    0 /   1
+
+     iteration #  9     ecut=    46.65 Ry     beta= 0.70
+     Davidson diagonalization with overlap
+
+---- Real-time Memory Report at c_bands before calling an iterative solver
+           997 MiB given to the printing process from OS
+             0 MiB allocation reported by mallinfo(arena+hblkhd)
+          5338 MiB available memory on the node where the printing process lives
+     GPU memory used/free/total (MiB): 1224 / 11063 / 12288
+------------------
+     ethr =  1.40E-10,  avg # of iterations =  1.0
+
+     negative rho (up, down):  5.707E-04 0.000E+00
+
+     total cpu time spent up to now is       11.9 secs
+
+     End of self-consistent calculation
+
+          k = 0.0000 0.0000 0.0000 (  5409 PWs)   bands (ev):
+
+   -24.8099 -12.5821  -8.8451  -6.7340
+
+     occupation numbers 
+     1.0000   1.0000   1.0000   1.0000
+
+     highest occupied level (ev):    -6.7340
+
+!    total energy              =     -44.03702424 Ry
+
+     total all-electron energy =      -152.883906 Ry
+     estimated scf accuracy    <          6.5E-09 Ry
+
+     The total energy is the sum of the following terms:
+     one-electron contribution =     -54.04932403 Ry
+     hartree contribution      =      28.81650499 Ry
+     xc contribution           =      -8.85649687 Ry
+     ewald contribution        =      -0.36067549 Ry
+     one-center paw contrib.   =      -9.58703286 Ry
+      -> PAW hartree energy AE =      28.94226823 Ry
+      -> PAW hartree energy PS =     -28.90801353 Ry
+      -> PAW xc energy AE      =     -17.65616829 Ry
+      -> PAW xc energy PS      =       8.03501503 Ry
+      -> total E_H with PAW    =      28.85075969 Ry
+      -> total E_XC with PAW   =     -18.47765012 Ry
+
+     convergence has been achieved in   9 iterations
+
+     negative rho (up, down):  5.707E-04 0.000E+00
+
+     Forces acting on atoms (cartesian axes, Ry/au):
+
+     atom    1 type  1   force =     0.00000000    0.00000000   -0.00016009
+     atom    2 type  2   force =     0.00000000    0.00044916    0.00008005
+     atom    3 type  2   force =     0.00000000   -0.00044916    0.00008005
+     The non-local contrib.  to forces
+     atom    1 type  1   force =     0.00000000    0.00000000   -2.49759065
+     atom    2 type  2   force =    -0.00000000   -0.08822148    0.06407604
+     atom    3 type  2   force =     0.00000000    0.08822148    0.06407604
+     The ionic contribution  to forces
+     atom    1 type  1   force =     0.00000000    0.00000000    4.33010729
+     atom    2 type  2   force =    -0.00000000    3.02210034   -2.16505364
+     atom    3 type  2   force =     0.00000000   -3.02210034   -2.16505364
+     The local contribution  to forces
+     atom    1 type  1   force =    -0.00004209   -0.00000355   -1.85307608
+     atom    2 type  2   force =     0.00000027   -2.93341411    2.10100593
+     atom    3 type  2   force =     0.00000042    2.93341419    2.10100513
+     The core correction contribution to forces
+     atom    1 type  1   force =    -0.00000048   -0.00000008    0.02028979
+     atom    2 type  2   force =     0.00000000    0.00000000    0.00000000
+     atom    3 type  2   force =     0.00000000    0.00000000    0.00000000
+     The Hubbard contrib.    to forces
+     atom    1 type  1   force =     0.00000000    0.00000000    0.00000000
+     atom    2 type  2   force =     0.00000000    0.00000000    0.00000000
+     atom    3 type  2   force =     0.00000000    0.00000000    0.00000000
+     The SCF correction term to forces
+     atom    1 type  1   force =     0.00000228   -0.00000274    0.00007708
+     atom    2 type  2   force =    -0.00000027   -0.00001566    0.00001959
+     atom    3 type  2   force =    -0.00000036    0.00001545    0.00001972
+
+     Total force =     0.000665     Total SCF correction =     0.000085
+     SCF correction compared to forces is large: reduce conv_thr to get better values
+     Energy error            =      9.1E-07 Ry
+     Gradient error          =      4.5E-04 Ry/Bohr
+
+     number of scf cycles    =   4
+     number of bfgs steps    =   3
+
+     energy             old  =     -44.0370233369 Ry
+     energy             new  =     -44.0370242441 Ry
+
+     CASE: energy            _new < energy            _old
+
+     new trust radius        =       0.0008350744 bohr
+     new conv_thr            =       0.0000000100 Ry
+
+
+ATOMIC_POSITIONS (angstrom)
+O             3.0000000000        3.7632390000        3.5970441646
+H             3.0000000000        4.5289587536        2.9996324177
+H             3.0000000000        2.9975192464        2.9996324177
+
+
+
+     Writing output data file ./water.save/
+     NEW-OLD atomic charge density approx. for the potential
+
+     negative rho (up, down):  5.699E-04 0.000E+00
+
+     total cpu time spent up to now is       12.7 secs
+
+     Self-consistent Calculation
+[tb_dev] Currently allocated     0.00E+00 Mbytes, locked:    0 /   0
+[tb_pin] Currently allocated     7.52E-01 Mbytes, locked:    0 /   1
+
+     iteration #  1     ecut=    46.65 Ry     beta= 0.70
+     Davidson diagonalization with overlap
+
+---- Real-time Memory Report at c_bands before calling an iterative solver
+           997 MiB given to the printing process from OS
+             0 MiB allocation reported by mallinfo(arena+hblkhd)
+          5336 MiB available memory on the node where the printing process lives
+     GPU memory used/free/total (MiB): 1141 / 11146 / 12288
+------------------
+     ethr =  1.00E-06,  avg # of iterations =  2.0
+
+     Threshold (ethr) on eigenvalues was too large:
+     Diagonalizing with lowered threshold
+
+     Davidson diagonalization with overlap
+
+---- Real-time Memory Report at c_bands before calling an iterative solver
+           997 MiB given to the printing process from OS
+             0 MiB allocation reported by mallinfo(arena+hblkhd)
+          5336 MiB available memory on the node where the printing process lives
+     GPU memory used/free/total (MiB): 1224 / 11063 / 12288
+------------------
+     ethr =  3.55E-09,  avg # of iterations =  5.0
+
+     negative rho (up, down):  5.707E-04 0.000E+00
+
+     total cpu time spent up to now is       12.9 secs
+
+     total energy              =     -44.03702465 Ry
+     estimated scf accuracy    <       0.00000018 Ry
+[tb_dev] Currently allocated     8.25E+01 Mbytes, locked:    0 /  12
+[tb_pin] Currently allocated     7.52E-01 Mbytes, locked:    0 /   1
+
+     iteration #  2     ecut=    46.65 Ry     beta= 0.70
+     Davidson diagonalization with overlap
+
+---- Real-time Memory Report at c_bands before calling an iterative solver
+           997 MiB given to the printing process from OS
+             0 MiB allocation reported by mallinfo(arena+hblkhd)
+          5337 MiB available memory on the node where the printing process lives
+     GPU memory used/free/total (MiB): 1224 / 11063 / 12288
+------------------
+     ethr =  2.24E-09,  avg # of iterations =  6.0
+
+     negative rho (up, down):  5.707E-04 0.000E+00
+
+     total cpu time spent up to now is       13.2 secs
+
+     total energy              =     -44.03702475 Ry
+     estimated scf accuracy    <       0.00000013 Ry
+[tb_dev] Currently allocated     8.25E+01 Mbytes, locked:    0 /  12
+[tb_pin] Currently allocated     7.52E-01 Mbytes, locked:    0 /   1
+
+     iteration #  3     ecut=    46.65 Ry     beta= 0.70
+     Davidson diagonalization with overlap
+
+---- Real-time Memory Report at c_bands before calling an iterative solver
+           997 MiB given to the printing process from OS
+             0 MiB allocation reported by mallinfo(arena+hblkhd)
+          5336 MiB available memory on the node where the printing process lives
+     GPU memory used/free/total (MiB): 1224 / 11063 / 12288
+------------------
+     ethr =  1.68E-09,  avg # of iterations =  2.0
+
+     negative rho (up, down):  5.707E-04 0.000E+00
+
+     total cpu time spent up to now is       13.4 secs
+
+     total energy              =     -44.03702473 Ry
+     estimated scf accuracy    <       0.00000004 Ry
+[tb_dev] Currently allocated     8.25E+01 Mbytes, locked:    0 /  12
+[tb_pin] Currently allocated     7.52E-01 Mbytes, locked:    0 /   1
+
+     iteration #  4     ecut=    46.65 Ry     beta= 0.70
+     Davidson diagonalization with overlap
+
+---- Real-time Memory Report at c_bands before calling an iterative solver
+           997 MiB given to the printing process from OS
+             0 MiB allocation reported by mallinfo(arena+hblkhd)
+          5336 MiB available memory on the node where the printing process lives
+     GPU memory used/free/total (MiB): 1224 / 11063 / 12288
+------------------
+     ethr =  4.59E-10,  avg # of iterations =  5.0
+
+     negative rho (up, down):  5.708E-04 0.000E+00
+
+     total cpu time spent up to now is       13.6 secs
+
+     total energy              =     -44.03702476 Ry
+     estimated scf accuracy    <       0.00000004 Ry
+[tb_dev] Currently allocated     8.25E+01 Mbytes, locked:    0 /  12
+[tb_pin] Currently allocated     7.52E-01 Mbytes, locked:    0 /   1
+
+     iteration #  5     ecut=    46.65 Ry     beta= 0.70
+     Davidson diagonalization with overlap
+
+---- Real-time Memory Report at c_bands before calling an iterative solver
+           997 MiB given to the printing process from OS
+             0 MiB allocation reported by mallinfo(arena+hblkhd)
+          5336 MiB available memory on the node where the printing process lives
+     GPU memory used/free/total (MiB): 1224 / 11063 / 12288
+------------------
+     ethr =  4.55E-10,  avg # of iterations =  1.0
+
+     negative rho (up, down):  5.709E-04 0.000E+00
+
+     total cpu time spent up to now is       13.7 secs
+
+     total energy              =     -44.03702476 Ry
+     estimated scf accuracy    <       0.00000001 Ry
+[tb_dev] Currently allocated     8.25E+01 Mbytes, locked:    0 /  12
+[tb_pin] Currently allocated     7.52E-01 Mbytes, locked:    0 /   1
+
+     iteration #  6     ecut=    46.65 Ry     beta= 0.70
+     Davidson diagonalization with overlap
+
+---- Real-time Memory Report at c_bands before calling an iterative solver
+           997 MiB given to the printing process from OS
+             0 MiB allocation reported by mallinfo(arena+hblkhd)
+          5336 MiB available memory on the node where the printing process lives
+     GPU memory used/free/total (MiB): 1224 / 11063 / 12288
+------------------
+     ethr =  1.45E-10,  avg # of iterations =  2.0
+
+     negative rho (up, down):  5.709E-04 0.000E+00
+
+     total cpu time spent up to now is       13.9 secs
+
+     End of self-consistent calculation
+
+          k = 0.0000 0.0000 0.0000 (  5409 PWs)   bands (ev):
+
+   -24.8083 -12.5855  -8.8413  -6.7336
+
+     occupation numbers 
+     1.0000   1.0000   1.0000   1.0000
+
+     highest occupied level (ev):    -6.7336
+
+!    total energy              =     -44.03702476 Ry
+
+     total all-electron energy =      -152.883906 Ry
+     estimated scf accuracy    <          8.0E-10 Ry
+
+     The total energy is the sum of the following terms:
+     one-electron contribution =     -54.04897826 Ry
+     hartree contribution      =      28.81693260 Ry
+     xc contribution           =      -8.85657952 Ry
+     ewald contribution        =      -0.36137335 Ry
+     one-center paw contrib.   =      -9.58702623 Ry
+      -> PAW hartree energy AE =      28.94414147 Ry
+      -> PAW hartree energy PS =     -28.90988581 Ry
+      -> PAW xc energy AE      =     -17.65637214 Ry
+      -> PAW xc energy PS      =       8.03522454 Ry
+      -> total E_H with PAW    =      28.85118827 Ry
+      -> total E_XC with PAW   =     -18.47772712 Ry
+
+     convergence has been achieved in   6 iterations
+
+     negative rho (up, down):  5.709E-04 0.000E+00
+
+     Forces acting on atoms (cartesian axes, Ry/au):
+
+     atom    1 type  1   force =     0.00000000    0.00000000    0.00006102
+     atom    2 type  2   force =     0.00000000    0.00017547   -0.00003051
+     atom    3 type  2   force =     0.00000000   -0.00017547   -0.00003051
+     The non-local contrib.  to forces
+     atom    1 type  1   force =     0.00000000    0.00000000   -2.49642247
+     atom    2 type  2   force =     0.00000000   -0.08826718    0.06400205
+     atom    3 type  2   force =    -0.00000000    0.08826718    0.06400205
+     The ionic contribution  to forces
+     atom    1 type  1   force =     0.00000000   -0.00000000    4.32626041
+     atom    2 type  2   force =     0.00000000    3.02313138   -2.16313020
+     atom    3 type  2   force =    -0.00000000   -3.02313138   -2.16313020
+     The local contribution  to forces
+     atom    1 type  1   force =     0.00001707    0.00005816   -1.84999157
+     atom    2 type  2   force =    -0.00000025   -2.93469328    2.09911870
+     atom    3 type  2   force =     0.00000050    2.93469168    2.09912406
+     The core correction contribution to forces
+     atom    1 type  1   force =     0.00000012    0.00000136    0.02028408
+     atom    2 type  2   force =     0.00000000    0.00000000    0.00000000
+     atom    3 type  2   force =     0.00000000    0.00000000    0.00000000
+     The Hubbard contrib.    to forces
+     atom    1 type  1   force =     0.00000000    0.00000000    0.00000000
+     atom    2 type  2   force =     0.00000000    0.00000000    0.00000000
+     atom    3 type  2   force =     0.00000000    0.00000000    0.00000000
+     The SCF correction term to forces
+     atom    1 type  1   force =    -0.00000306   -0.00000318   -0.00005278
+     atom    2 type  2   force =     0.00000001    0.00000412   -0.00000739
+     atom    3 type  2   force =    -0.00000003   -0.00000338   -0.00000677
+
+     Total force =     0.000259     Total SCF correction =     0.000054
+     SCF correction compared to forces is large: reduce conv_thr to get better values
+     Energy error            =      5.2E-07 Ry
+     Gradient error          =      1.8E-04 Ry/Bohr
+
+     number of scf cycles    =   5
+     number of bfgs steps    =   4
+
+     energy             old  =     -44.0370242441 Ry
+     energy             new  =     -44.0370247635 Ry
+
+     CASE: energy            _new < energy            _old
+
+     new trust radius        =       0.0003149744 bohr
+     new conv_thr            =       0.0000000100 Ry
+
+
+ATOMIC_POSITIONS (angstrom)
+O             3.0000000000        3.7632390000        3.5969669670
+H             3.0000000000        4.5291208999        2.9996710165
+H             3.0000000000        2.9973571001        2.9996710165
+
+
+
+     Writing output data file ./water.save/
+     NEW-OLD atomic charge density approx. for the potential
+
+     negative rho (up, down):  5.705E-04 0.000E+00
+
+     total cpu time spent up to now is       14.7 secs
+
+     Self-consistent Calculation
+[tb_dev] Currently allocated     0.00E+00 Mbytes, locked:    0 /   0
+[tb_pin] Currently allocated     7.52E-01 Mbytes, locked:    0 /   1
+
+     iteration #  1     ecut=    46.65 Ry     beta= 0.70
+     Davidson diagonalization with overlap
+
+---- Real-time Memory Report at c_bands before calling an iterative solver
+           997 MiB given to the printing process from OS
+             0 MiB allocation reported by mallinfo(arena+hblkhd)
+          5335 MiB available memory on the node where the printing process lives
+     GPU memory used/free/total (MiB): 1141 / 11146 / 12288
+------------------
+     ethr =  1.00E-06,  avg # of iterations =  2.0
+
+     Threshold (ethr) on eigenvalues was too large:
+     Diagonalizing with lowered threshold
+
+     Davidson diagonalization with overlap
+
+---- Real-time Memory Report at c_bands before calling an iterative solver
+           997 MiB given to the printing process from OS
+             0 MiB allocation reported by mallinfo(arena+hblkhd)
+          5334 MiB available memory on the node where the printing process lives
+     GPU memory used/free/total (MiB): 1224 / 11063 / 12288
+------------------
+     ethr =  1.36E-10,  avg # of iterations =  7.0
+
+     negative rho (up, down):  5.707E-04 0.000E+00
+
+     total cpu time spent up to now is       15.0 secs
+
+     total energy              =     -44.03702482 Ry
+     estimated scf accuracy    <       0.00000003 Ry
+[tb_dev] Currently allocated     8.25E+01 Mbytes, locked:    0 /  12
+[tb_pin] Currently allocated     7.52E-01 Mbytes, locked:    0 /   1
+
+     iteration #  2     ecut=    46.65 Ry     beta= 0.70
+     Davidson diagonalization with overlap
+
+---- Real-time Memory Report at c_bands before calling an iterative solver
+           997 MiB given to the printing process from OS
+             0 MiB allocation reported by mallinfo(arena+hblkhd)
+          5334 MiB available memory on the node where the printing process lives
+     GPU memory used/free/total (MiB): 1224 / 11063 / 12288
+------------------
+     ethr =  3.46E-10,  avg # of iterations =  3.0
+
+     negative rho (up, down):  5.708E-04 0.000E+00
+
+     total cpu time spent up to now is       15.2 secs
+
+     End of self-consistent calculation
+
+          k = 0.0000 0.0000 0.0000 (  5409 PWs)   bands (ev):
+
+   -24.8080 -12.5867  -8.8409  -6.7342
+
+     occupation numbers 
+     1.0000   1.0000   1.0000   1.0000
+
+     highest occupied level (ev):    -6.7342
+
+!    total energy              =     -44.03702483 Ry
+
+     total all-electron energy =      -152.883906 Ry
+     estimated scf accuracy    <          3.7E-09 Ry
+
+     The total energy is the sum of the following terms:
+     one-electron contribution =     -54.04733152 Ry
+     hartree contribution      =      28.81605184 Ry
+     xc contribution           =      -8.85643666 Ry
+     ewald contribution        =      -0.36227948 Ry
+     one-center paw contrib.   =      -9.58702900 Ry
+      -> PAW hartree energy AE =      28.94116108 Ry
+      -> PAW hartree energy PS =     -28.90690632 Ry
+      -> PAW xc energy AE      =     -17.65586169 Ry
+      -> PAW xc energy PS      =       8.03471223 Ry
+      -> total E_H with PAW    =      28.85030660 Ry
+      -> total E_XC with PAW   =     -18.47758612 Ry
+
+     convergence has been achieved in   2 iterations
+
+     negative rho (up, down):  5.708E-04 0.000E+00
+
+     Forces acting on atoms (cartesian axes, Ry/au):
+
+     atom    1 type  1   force =     0.00000000    0.00000000   -0.00000945
+     atom    2 type  2   force =     0.00000000    0.00006285    0.00000472
+     atom    3 type  2   force =     0.00000000   -0.00006285    0.00000472
+     The non-local contrib.  to forces
+     atom    1 type  1   force =     0.00000000    0.00000000   -2.49622243
+     atom    2 type  2   force =     0.00000000   -0.08826291    0.06396551
+     atom    3 type  2   force =     0.00000000    0.08826291    0.06396551
+     The ionic contribution  to forces
+     atom    1 type  1   force =    -0.00000000   -0.00000000    4.32465701
+     atom    2 type  2   force =     0.00000000    3.02312678   -2.16232851
+     atom    3 type  2   force =    -0.00000000   -3.02312678   -2.16232851
+     The local contribution  to forces
+     atom    1 type  1   force =    -0.00010543    0.00001817   -1.84874645
+     atom    2 type  2   force =    -0.00000228   -2.93481141    2.09834164
+     atom    3 type  2   force =    -0.00000375    2.93480981    2.09834016
+     The core correction contribution to forces
+     atom    1 type  1   force =    -0.00000176    0.00000020    0.02028617
+     atom    2 type  2   force =     0.00000000    0.00000000    0.00000000
+     atom    3 type  2   force =     0.00000000    0.00000000    0.00000000
+     The Hubbard contrib.    to forces
+     atom    1 type  1   force =     0.00000000    0.00000000    0.00000000
+     atom    2 type  2   force =     0.00000000    0.00000000    0.00000000
+     atom    3 type  2   force =     0.00000000    0.00000000    0.00000000
+     The SCF correction term to forces
+     atom    1 type  1   force =     0.00002532   -0.00001019   -0.00001767
+     atom    2 type  2   force =     0.00000050    0.00000931   -0.00000739
+     atom    3 type  2   force =     0.00000024   -0.00000986   -0.00000681
+
+     Total force =     0.000090     Total SCF correction =     0.000037
+     SCF correction compared to forces is large: reduce conv_thr to get better values
+     Energy error            =      6.2E-08 Ry
+     Gradient error          =      6.3E-05 Ry/Bohr
+
+     bfgs converged in   6 scf cycles and   5 bfgs steps
+     (criteria: energy <  1.0E-04 Ry, force <  1.0E-04 Ry/Bohr)
+
+     End of BFGS Geometry Optimization
+
+     Final energy             =     -44.0370248257 Ry
+
+     File ./water.bfgs deleted, as requested
+Begin final coordinates
+
+ATOMIC_POSITIONS (angstrom)
+O             3.0000000000        3.7632390000        3.5969669670
+H             3.0000000000        4.5291208999        2.9996710165
+H             3.0000000000        2.9973571001        2.9996710165
+End final coordinates
+
+
+ 
+     init_run     :      1.29s CPU      1.20s WALL (       1 calls)
+     electrons    :     15.59s CPU     10.04s WALL (       6 calls)
+     update_pot   :      4.56s CPU      2.37s WALL (       5 calls)
+     forces       :      1.14s CPU      0.95s WALL (       6 calls)
+
+     Called by init_run:
+     wfcinit      :      0.22s CPU      0.31s WALL (       1 calls)
+                                        0.31s GPU  (       1 calls)
+     wfcinit:atom :      0.00s CPU      0.00s WALL (       1 calls)
+                                        0.00s GPU  (       1 calls)
+     wfcinit:wfcr :      0.22s CPU      0.30s WALL (       1 calls)
+                                        0.30s GPU  (       1 calls)
+     potinit      :      0.52s CPU      0.32s WALL (       1 calls)
+     hinit0       :      0.25s CPU      0.17s WALL (       1 calls)
+
+     Called by electrons:
+     c_bands      :      1.62s CPU      1.71s WALL (      49 calls)
+     sum_band     :      1.31s CPU      0.94s WALL (      49 calls)
+     v_of_rho     :      4.13s CPU      2.45s WALL (      52 calls)
+     v_h          :      0.55s CPU      0.29s WALL (      52 calls)
+     v_xc         :      3.97s CPU      2.40s WALL (      58 calls)
+     newd         :      1.34s CPU      1.21s WALL (      52 calls)
+                                        1.10s GPU  (      47 calls)
+     PAW_pot      :      7.91s CPU      4.28s WALL (      57 calls)
+     mix_rho      :      1.11s CPU      0.64s WALL (      49 calls)
+
+     Called by c_bands:
+     init_us_2    :      0.00s CPU      0.00s WALL (       5 calls)
+     init_us_2_gp :      0.01s CPU      0.01s WALL (      99 calls)
+     regterg      :      1.56s CPU      1.63s WALL (      49 calls)
+
+     Called by sum_band:
+     sum_band:wei :      0.01s CPU      0.01s WALL (      49 calls)
+                                        0.00s GPU  (      49 calls)
+     sum_band:loo :      0.22s CPU      0.27s WALL (      49 calls)
+                                        0.21s GPU  (      49 calls)
+     sum_band:buf :      0.00s CPU      0.02s WALL (      49 calls)
+                                        0.00s GPU  (      49 calls)
+     sum_band:ini :      0.01s CPU      0.03s WALL (      49 calls)
+                                        0.02s GPU  (      49 calls)
+     sum_band:cal :      0.03s CPU      0.03s WALL (      54 calls)
+                                        0.03s GPU  (      49 calls)
+     sum_band:bec :      0.02s CPU      0.02s WALL (      54 calls)
+                                        0.02s GPU  (      49 calls)
+     addusdens    :      0.52s CPU      0.34s WALL (      49 calls)
+                                        0.28s GPU  (      49 calls)
+     addusd:skk   :      0.00s CPU      0.27s WALL (      98 calls)
+                                        0.01s GPU  (      98 calls)
+
+     Called by *egterg:
+     rdiaghg      :      0.43s CPU      0.53s WALL (     219 calls)
+                                        0.51s GPU  (     219 calls)
+     regterg:over :      0.17s CPU      0.18s WALL (     178 calls)
+     regterg:upda :      0.04s CPU      0.04s WALL (     178 calls)
+     regterg:last :      0.04s CPU      0.04s WALL (     141 calls)
+     h_psi        :      0.65s CPU      0.68s WALL (     228 calls)
+                                        0.65s GPU  (     228 calls)
+     s_psi        :      0.02s CPU      0.05s WALL (     228 calls)
+                                        0.04s GPU  (     228 calls)
+     g_psi        :      0.00s CPU      0.01s WALL (     178 calls)
+                                        0.00s GPU  (     178 calls)
+
+     Called by h_psi:
+     h_psi:calbec :      0.11s CPU      0.12s WALL (     228 calls)
+                                        0.11s GPU  (     228 calls)
+     vloc_psi     :      0.44s CPU      0.47s WALL (     228 calls)
+                                        0.42s GPU  (     228 calls)
+     add_vuspsi   :      0.00s CPU      0.04s WALL (     228 calls)
+                                        0.02s GPU  (     228 calls)
+
+     General routines
+     calbec       :      0.15s CPU      0.15s WALL (     306 calls)
+     fft          :      4.17s CPU      2.51s WALL (     622 calls)
+                                        0.33s GPU  (      71 calls)
+     ffts         :      0.26s CPU      0.15s WALL (     101 calls)
+     fftw         :      0.37s CPU      0.52s WALL (     554 calls)
+                                        0.42s GPU  (     554 calls)
+     interpolate  :      0.51s CPU      0.26s WALL (      52 calls)
+ 
+     Parallel routines
+
+     PAW routines
+     PAW_pot      :      7.91s CPU      4.28s WALL (      57 calls)
+     PAW_symme    :      0.02s CPU      0.01s WALL (     106 calls)
+ 
+     PWSCF        :     23.80s CPU     15.37s WALL
+
+ 
+   This run was terminated on:  12: 1:36  16Nov2021            
+
+=------------------------------------------------------------------------------=
+   JOB DONE.
+=------------------------------------------------------------------------------=

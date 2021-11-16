@@ -1,0 +1,35 @@
+&CONTROL
+   calculation      = 'relax'
+   verbosity        = 'high'
+   prefix           = 'water'
+   etot_conv_thr    = 0.0001
+   forc_conv_thr    = 0.0001
+   disk_io          = 'none'
+/
+&SYSTEM
+   ntyp             = 2
+   nat              = 3
+   ibrav            = 0
+/
+&ELECTRONS
+/
+&IONS
+/
+&CELL
+/
+
+ATOMIC_SPECIES
+O 15.999 O.pbe-n-kjpaw_psl.1.0.0.UPF
+H 1.008 H.pbe-kjpaw_psl.1.0.0.UPF
+
+K_POINTS gamma
+
+CELL_PARAMETERS angstrom
+6.00000000000000 0.00000000000000 0.00000000000000
+0.00000000000000 7.52647800000000 0.00000000000000
+0.00000000000000 0.00000000000000 6.59630900000000
+
+ATOMIC_POSITIONS angstrom
+O 3.0000000000 3.7632390000 3.5963090000 
+H 3.0000000000 4.5264780000 3.0000000000 
+H 3.0000000000 3.0000000000 3.0000000000 
